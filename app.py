@@ -1,5 +1,8 @@
-from flask import Flask, request, render_template_string, send_file, abort
-import os, zipfile, uuid, json
+from flask import Flask, request, render_template_string, send_file
+import os
+import zipfile
+import json
+import io
 
 app = Flask(__name__)
 
@@ -37,9 +40,11 @@ PAGE_HTML = """
 </html>
 """
 
+
 @app.route("/", methods=["GET"])
 def index():
     return render_template_string(PAGE_HTML)
+
 
 @app.route("/generate", methods=["POST"])
 def generate():
@@ -56,7 +61,6 @@ def generate():
     # ----- 2) Ссылка вида https://demo.megagroup.shop/sample/05/35 -----
     elif "/sample/" in url:
         parts = url.split("/sample/")[-1].split("/")
-        # Склеиваем части: 05 + 35 = 0535, потом убираем ведущий ноль
         work_id = "".join(parts).lstrip("0")
 
     else:
@@ -67,20 +71,29 @@ def generate():
         return f"Работа с ID {work_id} не найдена в базе", 404
 
     work_folder = os.path.join(WORKS_DIR, mapping[work_id])
+
     if not os.path.exists(work_folder):
         return "Файлы работы отсутствуют", 404
 
-    # Создаём временный архив
-    uid = str(uuid.uuid4())
-    zip_path = f"temp_{uid}.zip"
-    with zipfile.ZipFile(zip_path, "w") as zf:
+    # ---- Создание ZIP архива в памяти ----
+    memory_file = io.BytesIO()
+
+    with zipfile.ZipFile(memory_file, "w", zipfile.ZIP_DEFLATED) as zf:
         for root, _, files in os.walk(work_folder):
             for file in files:
                 abs_path = os.path.join(root, file)
                 rel_path = os.path.relpath(abs_path, work_folder)
                 zf.write(abs_path, arcname=rel_path)
 
-    return send_file(zip_path, as_attachment=True, download_name=f"{mapping[work_id]}.zip")
+    memory_file.seek(0)
+
+    return send_file(
+        memory_file,
+        as_attachment=True,
+        download_name=f"{mapping[work_id]}.zip",
+        mimetype="application/zip"
+    )
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
