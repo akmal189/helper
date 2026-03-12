@@ -1,0 +1,105 @@
+.folder-actions {
+	order: 2;
+	@media all and (max-width: 1340px) {
+		padding: 10px 35px;
+	}
+
+    .banner-3{
+		margin: 0 0 30px;
+		position: relative;
+		border-radius: 6px;
+		//background-color: #e7f0ed;
+		.banner-image {
+			/*position: absolute;
+			left: auto;
+			bottom: 0;
+			top: 0;
+			right: -36px;*/
+			font-size: 0;
+			margin: 20px 0 0;
+			img {
+				border-radius: 6px;
+			}
+		}
+		
+		.banner-text{
+			position: relative;
+			padding: 20px;
+			color: #000;
+			font-size: 21px;
+			line-height: 1;
+			
+			span{
+				display: inline-block;
+				margin: 15px 0 0 0;
+				border: 2px dashed #000;
+				border-radius: 9px;
+				padding: 12px 20px;
+				cursor: pointer;
+				strong{
+					font-size: 28px;
+					text-decoration: underline;
+				}
+			}
+			
+		}
+	}
+	
+	.banner-4{
+		background: url(banner-4-bg.jpg) top right no-repeat #df2a42;
+		border-radius: 6px; position: relative;
+		.banner-4-image {
+			font-size: 0;
+			position: absolute;top: -2px;left: -32px;
+			width: 138px;height: 138px;
+			border-radius: 50%;
+			box-shadow: 10px 10px 30px 0 rgba(0,0,0,0.3);
+			img {
+				border-radius: 50%;
+			}
+		} 
+		
+		.banner-text{
+			padding: 50px 30px 20px;color: #fff;font-size: 17px;
+			.banner-title{
+				margin-bottom: 40px;font-size: 19px;
+				margin-left: 80px;
+				strong{font-size: 32px;}
+			}
+			
+			&-bottom{
+				line-height: 1.5;
+				p {
+					line-height: 1.5;
+				}
+				>strong{display: block;margin-top: 5px;}
+				.banner-text-btn {
+					a {
+						display: block;border: 2px dashed rgba(255,255,255,0.5);
+						border-radius: 6px;
+						text-align: center;
+						margin-top: 25px;
+						cursor: pointer;
+						color: #fff;
+						text-decoration: underline;
+						padding: 13px 10px;
+						font-weight: bold;
+						&:hover {
+							text-decoration: none;
+						}
+					}
+				}
+				span{
+					
+				}
+				
+			}
+		}
+	}
+}
+
+@media (max-width: 1260px) {
+    .folder-actions {
+        margin: 0 0 30px;
+    }
+}

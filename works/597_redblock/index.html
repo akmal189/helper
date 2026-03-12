@@ -1,0 +1,15 @@
+{if $action_1851.text || ($action_1851.link && $action_1851.link_title)}
+    <div class="bottom-action-wrap block_padding">
+        <div class="bottom-action-wrap-in">
+            <div class="bottom-action-wrap-left" style="background: url({s3_img width=540 height=360 method=c src=$action_1851.image.filename}) 0 0 no-repeat;">
+                <div class="bottom-action-title">
+                    {$action_1851.title}
+                    {if $action_1851.link && $action_1851.link_title}
+                    - <a href="{$action_1851.link}">{$action_1851.link_title}</a>
+                    {/if}
+                </div>
+            </div>
+            <div class="bottom-action-text">{$action_1851.text}</div>
+        </div>
+    </div>
+{/if}

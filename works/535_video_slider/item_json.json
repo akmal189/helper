@@ -1,0 +1,40 @@
+{
+	"title": {
+		"type": "generate"
+	},
+	"list": {
+		"type": "meta",
+		"name": "Добавить слайд",
+		"value": {
+			"video": {
+				"type": "media2",
+				"name": "Выбрать видео"
+			},
+			"id": {
+				"type": "text",
+				"name": "ID видео YouTube",
+				"size": 50,
+				"maxlength": 20
+			},
+			"image": {
+				"type": "image2",
+				"name": "Изображение",
+				"note": "Рекомендуемый размер 1920*900px",
+				"required": true
+			},
+			"btn": {
+				"type": "meta",
+				"name": "Кнопка-ссылка",
+				"single": true,
+				"value": {
+					"link": {
+						"type": "text",
+						"name": "Ссылка",
+						"size": 70,
+						"maxlength": 250
+					}
+				}
+			}
+		}
+	}
+}

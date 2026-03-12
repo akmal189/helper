@@ -1,0 +1,32 @@
+{
+    "title":{
+        "type":"hidden",
+        "size":"60",
+        "maxlength":"250",
+        "required":false
+    },
+    "subtitle":{
+        "type":"text",
+        "name":"Заголовок",
+        "size":"60",
+        "maxlength":"250",
+        "required":false
+    },
+    "pics":{
+        "name":"Изображения",
+        "type":"meta",
+        "value":{
+            "title":{
+                "maxlength":"250",
+                "size":"60",
+                "required":false
+            },
+            "img":{
+                "name":"Изображение",    
+                "type":"image2",
+                "required":true,
+                "note": "Изображение размером не меньше 880 х 500px"
+            }
+        }
+    }
+}

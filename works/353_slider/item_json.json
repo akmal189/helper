@@ -1,0 +1,114 @@
+{
+    "is_infinite": {
+        "type": "checkbox",
+        "name": "Цикличная смена слайдов",
+        "staff_only": true
+    },
+    "is_autoplay": {
+        "type": "checkbox",
+        "name": "Автоматическая смена слайдов",
+        "staff_only": true
+    },
+    "is_arrows_enabled": {
+        "type": "checkbox",
+        "name": "Отображать стрелки для навигации",
+        "staff_only": true
+    },
+    "is_dots_enabled": {
+        "type": "checkbox",
+        "name": "Отображать точки для навигации",
+        "staff_only": true
+    },
+    "is_preview": {
+        "type": "checkbox",
+        "name": "Включить превью (Тип 1)",
+        "staff_only": true
+    },
+    "is_preview2":{
+        "type":"checkbox",
+        "name": "Включить превью (Тип 2)",
+        "note": "Включать только при выключенном первом типе",
+        "staff_only": true
+    },
+    "dots_x_position": {
+        "type": "select",
+        "name": "Расположение навигационных точек по оси X",
+        "options": {
+            "left": "Слева",
+            "center": "По центру",
+            "right": "Справа"
+        },
+        "value": "center",
+        "staff_only": true
+    },
+    "desc_position": {
+        "type": "select",
+        "name": "Расположение блока с описанием",
+        "options": {
+            "left": "Слева",
+            "right": "Справа",
+            "bottom": "Снизу"
+        },
+        "value": "bottom",
+        "staff_only": true
+    },
+    "timeout": {
+        "type": "int",
+        "name": "Время автоматического переключения слайдов",
+        "value": 3000,
+        "note": "Значение в мс (1000 мс = 1 сек)",
+        "size": 5,
+        "maxlength": 5,
+        "required": true,
+        "staff_only": true
+    },
+    "speed": {
+        "type": "int",
+        "name": "Скорость анимации",
+        "value": 300,
+        "note": "Значение в мс (1000 мс = 1 сек)",
+        "size": 5,
+        "maxlength": 5,
+        "required": true,
+        "staff_only": true
+    },
+    "slides": {
+        "type": "meta",
+        "name": "Список слайдов",
+        "value": {
+            "title": {
+                "name": "Заголовок слайда",
+                "type": "text",
+                "size": 70,
+                "maxlength": 255
+            },
+            "text": {
+                "name": "Текст",
+                "type": "html"
+            },
+                "price": {
+                "name": "Цена",
+                "type": "text",
+                "size": 40,
+                "maxlength": 255
+            },
+            "link_text": {
+                "name": "Текст кнопки",
+                "type": "text",
+                "size": 40,
+                "maxlength": 255
+            },
+            "link": {
+                "name": "Ссылка кнопки",
+                "type": "text",
+                "size": 70,
+                "maxlength": 255
+            },
+            "image": {
+                "name": "Изображение",
+                "type": "image2",
+                "required": true
+            }
+        }
+    }
+}

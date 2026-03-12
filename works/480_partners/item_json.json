@@ -1,0 +1,23 @@
+{
+	"desc": {
+		"type": "html",
+		"name": "Текст"
+	},
+	"list": {
+		"type": "meta",
+		"name": "Блоки",
+		"value": {
+			"image": {
+				"type": "image2",
+				"name": "Изображение",
+				"note": "Оптимальный размер 600х400"
+			},
+			"link": {
+				"type": "text",
+				"name": "Ссылка",
+				"size": 80,
+				"maxlength": 250
+			}
+		}
+	}
+}

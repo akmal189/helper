@@ -1,0 +1,45 @@
+{if $slider.list}
+{s3_require file="/g/libs/tiny-slider/2.9.3/css/tiny-slider.css"}
+{s3_require file="/g/libs/tiny-slider/2.9.3/js/tiny-slider.min.js"}
+{s3_require file="images/videoslider.js"}
+{s3_require file="images/site.addons.js"}
+{s3_require file="images/site.addons.scss.css"}
+
+	<div class="video-slider-wrapper">
+		<div class="video-slider">
+			{foreach from=$slider.list item=e name=slider}
+				<div class="video-slider__item{if $smarty.foreach.slider.first} video-slider__item-first{/if}">
+					<div class="video-slider__viewport">
+						{if $e.video}
+							{assign var=path_to_video value=$e.video.filename}
+							{assign var=path_to_video2 value=$path_to_video|regex_replace:"/(.+)(v\.oml\.ru)(.+)/":"\$2"}
+							{assign var=path_to_video3 value=$path_to_video|regex_replace:"/(https?:)(.+)/":"\$2"}
+							{if $smarty.foreach.slider.first}
+								<video autoplay="autoplay" muted="muted" playsinline="true" loop="loop" type="video/mp4" poster="{$IMAGES_DIR}{$e.image.filename}">
+									<source src="{if $path_to_video2 != 'v.oml.ru'}/f/{$path_to_video|regex_replace:"/^(\/f)*\//":""}{else}{$path_to_video3}{/if}">
+								</video>
+							{else}
+								<video playsinline="true" muted="muted" loop="loop" type="video/mp4" poster="{$IMAGES_DIR}{$e.image.filename}">
+									<source src="{if $path_to_video2 != 'v.oml.ru'}/f/{$path_to_video|regex_replace:"/^(\/f)*\//":""}{else}{$path_to_video3}{/if}">
+								</video>
+							{/if}
+							<div class="video-slider__play"></div>
+						{elseif $e.id}
+							<iframe data-video-id="{$e.id}" class="_not-paused js-lp-video-youtube" id="youtube-video-{$e.id}" src="https://www.youtube.com/embed/{$e.id}?controls=1&enablejsapi=1&rel=0" frameborder="0" allowfullscreen></iframe>
+						{else}
+							<img src="{s3_img width=1920 height=900 method=c src=$e.image.filename}" alt="{$e.title}" />
+						{/if}
+					</div>
+					<div class="video-slider__item-info">
+						<div class="video-slider__item-title">{$e.title}</div>
+						{if $e.btn.link}
+							<div class="video-slider__item-more">
+								<a href="{$e.btn.link}">{$e.btn.title}</a>
+							</div>
+						{/if}
+					</div>
+				</div>
+			{/foreach}
+		</div>
+	</div>
+{/if}

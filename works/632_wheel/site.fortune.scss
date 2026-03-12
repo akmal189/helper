@@ -1,0 +1,61 @@
+.fortune-wheel__wrap {
+	--primary-color-l-5: #fef2da !important;
+	--primary-color-base: #ffda33 !important;
+	--primary-color-d-5: #ffda33 !important;
+	--primary-color-l-10: #fef2da !important;
+	--primary-color-d-10: #fb2b61 !important;
+	.lp-header-text-3 {
+		//fill: #fff !important;
+	}
+}
+
+.block-14 {
+	display: block;
+}
+
+.decor-wrap-popup {
+	margin: 0 0 20px;
+}
+.decor-wrap-popup .lpc-popup-fortune__wrap {
+	padding: 20px;
+	border: 1px solid #fee4d0;
+}
+
+.decor-wrap-popup [data-media-source="media-xs"] .lpc-popup-fortune__wrap {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.decor-wrap-popup .lpc-button--type-1._v2-text {
+	background: var(--primary-color-base);
+}
+
+.lpc-fortuna-1__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+    img {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    object-fit: cover;
+	    width: 100% !important;
+	    height: 100% !important;
+	    max-height: 100% !important;
+	}
+}
+.lpc-fortuna-1__background:has(img)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: #fff;
+    opacity: 0.7;
+}

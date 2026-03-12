@@ -1,0 +1,117 @@
+.play_video-wrap{
+	text-align: center;
+	padding: 15px 0 0 0;
+}
+.play_video-text{
+	display: inline-block;
+	vertical-align: top;
+	color: #555;
+	line-height: 45px;
+	padding: 0 8px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.sh-btn.prod {
+    opacity: 1;
+    text-align: center;
+    top: auto;
+    width: auto;
+    margin: 0;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    vertical-align: top;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
+	position: relative;
+}
+.play_video {
+    border: medium none;
+    border-radius: 19px 0 0 19px;
+	color: #4C4242;
+    cursor: pointer;
+    display: block;
+    height: 45px;
+    opacity: 1;
+    padding: 0;
+    width: 45px;
+    border-radius: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' version='1.1' width='512' height='512' x='0' y='0' viewBox='0 0 24 24' style='enable-background:new 0 0 512 512' xml:space='preserve'%3E%3Cg%3E%3Crect xmlns='http://www.w3.org/2000/svg' x='7' y='7' width='10' height='10' fill='%23fff'/%3E%3Cpath xmlns='http://www.w3.org/2000/svg' d='m23.469 5.929.03.196c-.29-1.029-1.073-1.823-2.068-2.112l-.021-.005c-1.871-.508-9.4-.508-9.4-.508s-7.51-.01-9.4.508c-1.014.294-1.798 1.088-2.083 2.096l-.005.021c-.699 3.651-.704 8.038.031 11.947l-.031-.198c.29 1.029 1.073 1.823 2.068 2.112l.021.005c1.869.509 9.4.509 9.4.509s7.509 0 9.4-.509c1.015-.294 1.799-1.088 2.084-2.096l.005-.021c.318-1.698.5-3.652.5-5.648 0-.073 0-.147-.001-.221.001-.068.001-.149.001-.23 0-1.997-.182-3.951-.531-5.846zm-13.861 9.722v-7.293l6.266 3.652z' fill='%2300a1e7' data-original='%23000000' style=''/%3E%3C/g%3E%3C/svg%3E") 50%/contain no-repeat;
+}
+.sh-btn a::before {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent transparent transparent #fff;
+    border-image: none;
+    border-style: solid;
+    border-width: 10px 10px 10px 16px;
+    content: "";
+    display: block;
+    left: 18px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    display: none;
+}
+
+.video_block {
+	display: none; 
+	position: fixed; 
+	width: 534px; 
+	height: 300px; 
+	top: 50%; 
+	left: 50%; 
+	margin-top: -167px; 
+	margin-left: -250px; 
+	z-index: 10000;
+}
+.sample-closed {
+	background: url(../images/closed.svg) 0 0 no-repeat;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='15px' height='15px' style='shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd' viewBox='0 0 14.9661 14.9652'%3E%3Cdefs%3E%3Cstyle type='text/css'%3E%3C!%5BCDATA%5B .fil0 %7Bfill:white%7D %5D%5D%3E%3C/style%3E%3C/defs%3E%3Cg id='Слой_x0020_1'%3E%3Cmetadata id='CorelCorpID_0Corel-Layer'/%3E%3Cpath class='fil0' d='M9.1616 7.48218l5.4568 5.4568c0.463317,0.463317 0.463317,1.21523 0,1.67855 -0.463752,0.463752 -1.21566,0.463752 -1.67898,0l-5.4568 -5.45636 -5.45636 5.45636c-0.463317,0.463752 -1.21436,0.463752 -1.67768,0 -0.464621,-0.463317 -0.464621,-1.21523 0,-1.67855l5.45506 -5.4568 -5.45506 -5.45549c-0.463752,-0.463317 -0.463752,-1.21523 0,-1.67898 0.463317,-0.463317 1.21523,-0.463317 1.67855,0l5.45549 5.4568 5.45549 -5.4568c0.463317,-0.463317 1.21566,-0.463317 1.67898,0 0.463317,0.463752 0.463317,1.21566 0,1.67898l-5.45549 5.45549z'/%3E%3C/g%3E%3C/svg%3E");
+	height: 15px; 
+	width: 15px; 
+	position: absolute;
+	right: 0px; 
+	top: -25px;
+	z-index: 10000;
+	cursor: pointer;
+}
+.bgbg { 
+	display: none; 
+	position: fixed; 
+	top: 0; 
+	left: 0; 
+	right: 0; 
+	bottom: 0; 
+	background: #000;
+	opacity: 0.7; 
+	z-index: 9999;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+	.video_block { 
+		width: 100%; 
+		height: 100%; 
+		max-height: 200px;
+		max-width: 356px;
+		margin-left: -178px;
+		margin-top: -100px;
+	}
+}
+@media screen and (min-width: 240px) and (max-width: 500px) {
+	.video_block {
+		width: 100%; 
+		height: 100%;
+		max-height: 180px; 
+		max-width: 320px; 
+		margin-left: -160px; 
+		margin-top: -90px;
+	}
+}
+.sample-popup {
+	display: none;
+}

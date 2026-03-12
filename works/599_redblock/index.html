@@ -1,0 +1,49 @@
+{if $action_1851.promo.promo && $action_1851.promo.link || $action_1851.dis.text || ($action_1851.dis.link && $action_1851.dis.link_title)}
+    <div class="folder-actions">
+        {if $action_1851.promo.promo && $action_1851.promo.link}
+            <div class="banner-3">
+                <div class="banner-block">
+                    <div class="banner-text">
+                        <div>{$action_1851.promo.title}</div>
+                        <span>
+                            <a href="{$action_1851.promo.link}">
+                                <strong>{$action_1851.promo.promo}</strong>
+                            </a>
+                        </span>
+                        {if $action_1851.promo.image.filename}
+                            <div class="banner-image">
+                                <img src="{s3_img width=260 height=- method=r src=$action_1851.promo.image.filename}" alt="{$action_1851.promo.title}" />
+                            </div>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        {/if}
+        {if $action_1851.dis.text || ($action_1851.dis.link && $action_1851.dis.link_title)}
+            <div class="banner-4">
+                <div class="banner-4-image">
+                    <img src="{s3_img width=138 height=138 method=c src=$action_1851.dis.image.filename}" alt="{$action_1851.dis.title}" />
+                </div>
+                <div class="banner-block">
+                    <div class="banner-text">
+                        <div class="banner-title">
+                            {$action_1851.dis.title}
+                            {if $action_1851.dis.subtitle}
+                                <br>
+                                <strong>{$action_1851.dis.subtitle}</strong>
+                            {/if}
+                        </div>
+                        <div class="banner-text-bottom">
+                            {$action_1851.dis.text|replace:"&nbsp;":" "}
+                            {if $action_1851.dis.link && $action_1851.dis.link_title}
+                                <div class="banner-text-btn">
+                                    <a href="{$action_1851.dis.link}">{$action_1851.dis.link_title}</a>
+                                </div>
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {/if}
+    </div>
+{/if}

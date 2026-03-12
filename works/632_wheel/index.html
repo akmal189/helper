@@ -1,0 +1,72 @@
+{if !$fortune_wheel.hide_block}
+	{include file="db:fortune-1851.tpl"}
+	
+	{if $fortune_wheel.main_settings.sectors}
+		<script src="images/site.fortune.js"></script>
+		<script src="/g/s3/lp/lpc.v4/plugins/d3js/d3.v3.min.js"></script>
+		<link rel="stylesheet" href="/g/s3/lp/lpc.v4/css/form.styles.css">
+		
+		<link rel="stylesheet" href="images/wheel.scss.css">
+		<link rel="stylesheet" href="images/fw_styles.scss.css">
+		<link rel="stylesheet" href="images/site.fortune.scss.css">
+	{/if}
+{/if}
+
+
+
+{if $fortune_wheel.main_settings.sectors}
+	<div class="decor-wrap-popup" data-time="{$fortune_wheel.time*1000}">
+		<div class="decor-wrap-popup-in">
+			<div class="decor-wrap-close">
+				<span></span>
+				<span></span>
+			</div>
+			<div class="decor-wrap-winning">
+				<h2 class="lp-header-title-2"></h2>
+			</div>
+			<div class="decor-wrap decor-wrap2" data-media-source="media-xl" data-time="{$fortune_wheel.time|default:"3"}">
+			
+			    <div class="lpc-popup-fortune lpc-block fortune-type-1{if $fortune_wheel.visual_settings.reverse} _reverse_block{if $fortune_wheel.visual_settings.types == " 3"} _right-side{/if}{/if} " id="_lp_block_" data-elem-type="block" data-popup-block="1">
+			
+			        <div class="fortune-wheel__wrap lpc-popup-fortune__wrap lpc-wrap" data-elem-type="container" data-lp-selector=".lpc-popup-fortune__wrap">
+			        	
+			        	<div class="lpc-fortuna-1__background" data-lp-selector=".lpc-fortuna-1__background" data-path="bg_image" data-elem-type="generate" data-lp-controls-list="image,background,select">
+							{if $fortune_wheel.main_settings.bg_image.filename}
+								<img src="{s3_img src=$fortune_wheel.main_settings.bg_image.filename width=1920}" alt="">
+							{/if}
+						</div>
+			
+			            <div class="lpc-popup-fortune__row {if $fortune_wheel.visual_settings.reverse}_reverse{/if}{if $fortune_wheel.visual_settings.form_width == 2} _form-narrow{/if}">
+			                <div class="fortune-wheel fortune-wheel2 lpc-popup-fortune__wheel" {if $fortune_wheel.visual_settings.infinite}data-infinite="1" {/if} data-labels='{foreach from=$fortune_wheel.main_settings.sectors item=label key=kkk}{if $label}{ldelim}"label":"{$label}", "value":"1"{rdelim},{/if}{/foreach}{if $fortune_wheel.visual_settings.double}{foreach from=$fortune_wheel.main_settings.sectors item=label key=kkk}{if $label}{ldelim}"label":"{$label}", "value":"1"{rdelim},{/if}{/foreach}{/if}'></div>
+			                <div class="question lpc-popup-fortune__question" data-elem-type="container" data-lp-selector=".lpc-popup-fortune__question">
+			                    <div class="lpc-popup-fortune__step-1">
+			                        <div class="lpc-popup-fortune__title-1 lp-header-title-2" data-path="title1" data-elem-type="header" data-lp-selector=".lpc-popup-fortune__title-1">{$fortune_wheel.main_settings.title1}</div>
+			                        <div class="lpc-popup-fortune__text-1 lp-header-text-1" data-path="desc1" data-elem-type="text" data-lp-selector=".lpc-popup-fortune__text-1">{$fortune_wheel.main_settings.desc1}</div>
+			                        <div class="lp-button lpc-button--type-1 lpc-popup-fortune__custom-btn _v2-text" data-lp-controls-list="text,clear,background,border,indents,shadow,link" data-elem-type="generate" data-lp-selector="lpc-popup-fortune__custom-btn">{$fortune_wheel.main_settings.btn|default:"Вращать"}</div>
+			                        <div class="lpc-popup-fortune__send-messege question-message">
+			                            <div class="lpc-popup-fortune__note lp-header-text-2" data-elem-type="text" data-lp-selector=".lpc-popup-fortune__note" data-path="notes">
+			                                {$fortune_wheel.main_settings.notes}
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="lpc-popup-fortune__step-2" style="display: none">
+			                        <div class="question__before-send lpc-popup-fortune__top">
+			                            <div class="question__after-send" data-send-text="{$fortune_wheel.main_settings.sendmessege|default:'Ваш выигрыш'}">
+			                                <h2 class="lp-header-title-2"></h2>
+			                            </div>
+			                            <div class="lpc-popup-fortune__text lp-header-text-1 " data-path="descform" data-elem-type="text" data-lp-selector=".lpc-popup-fortune__text">{$fortune_wheel.main_settings.descform}</div>
+			                        </div>
+			                        <div class="lpc-popup-fortune__form">
+			                            {include file="global:lpc4.form.tpl" anketa=$fortune_wheel.main_settings.form hide_title=1}
+			                        </div>
+			                        <div class="lp-button lpc-button--type-1 lpc-popup-fortune__finish-btn _v2-text" data-lp-controls-list="text,clear,background,border,indents,shadow,link" data-elem-type="generate" data-lp-selector=".lpc-popup-fortune__finish-btn" style="display: none;">{$fortune_wheel.main_settings.finish|default:"Спасибо, я понял(a)"}</div>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			
+			</div>
+		</div>
+	</div>
+{/if}

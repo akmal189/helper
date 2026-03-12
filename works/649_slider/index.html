@@ -1,0 +1,89 @@
+{if !empty($tuning_reviews.list)}
+
+<link rel="stylesheet" href="/g/libs/tiny-slider/2.9.2/css/tiny-slider.min.css">
+<script defer src="/g/libs/tiny-slider/2.9.2/js/tiny-slider.min.js"></script>
+
+<link rel="stylesheet" href="images/rev_slider_styles.scss.css">
+<script src="images/rev_slider.js"></script>
+
+	<div class="tuning_reviews">
+		<div class="site-reviews__inner tuning_reviews__padding">
+			<div class="reviews">
+                <div class="reviews__container">
+                    <div class="reviews__header">
+                        <div class="current-slide">
+                        <span id="current-slide"></span> / <span id="total-slides"></span>
+                        </div>
+                        <div class="reviews__title-wrapper">
+                            <div class="reviews__title">{$reviews_block.title}</div>
+                            {if $reviews_block.desc}
+                                <div class="reviews__description">{$reviews_block.desc}</div>
+                            {/if}
+                        </div>
+                        <div class="reviews__controls">
+                            <button type="button" class="reviews__prev-button"></button>
+                            <div class="reviews__nav">
+                                {foreach from=$reviews_block.list item=e}
+                                    <button type="button" class="reviews__nav-button" style="display: none;"></button>
+                                {/foreach}
+                            </div>
+                            <button type="button" class="reviews__next-button"></button>
+                        </div>
+                    </div>
+                    <div class="reviews__items">
+                        {foreach from=$tuning_reviews.list item=e}
+                            <div class="reviews__item ">
+                                <div class="reviews-item">
+                                    <div class="reviews-item__video-wrapper">
+                                        {if $e.video_id2}
+                                            <div class="reviews-item__video-wrapper">
+                                                <div class="reviews-item__video-poster" data-html='<iframe class="rutube-video" width="720" height="405" src="https://rutube.ru/play/embed/{$e.video_id2}" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>'>
+                                                    <img src="{s3_img src=$e.image.filename width=600}" alt="" class="reviews-item__video-poster-image">
+                                                    {*if $e.video_title}
+                                                        <div class="reviews-item__video-title">{$e.video_title}</div>
+                                                    {/if*}
+                                                </div>
+                                            </div>
+                                        {elseif $e.video_id}
+                                            <div class="reviews-item__video-wrapper">
+												<div class="reviews-item__video-poster" data-html="<iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/{$e.video_id}?enablejsapi=1&version=3&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;></iframe>">
+													<img src="{s3_img src=$e.image.filename width=600}" alt="" class="reviews-item__video-poster-image">
+													{*<img src="//img.youtube.com/vi/{$e.video_id}/maxresdefault.jpg" alt="" class="reviews-item__video-poster-image">*}
+													{*if $e.video_title}
+														<div class="reviews-item__video-title">{$e.video_title}</div>
+													{/if*}
+												</div>
+											</div>
+                                        {/if}
+                                        <div class="reviews-item__body">
+                                            <div class="reviews-item__header">
+                                                <div class="reviews-item__title-wrapper">
+                                                    <div class="reviews-item__elemet">
+                                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.17774 4.98621L0 9.7206V14.3594V18.9982H4.26813H8.53626V14.36V9.72193L6.43716 9.70522L4.33812 9.68857L6.14886 5.62156C7.14479 3.3847 8.08753 1.2614 8.24387 0.903188L8.52814 0.251831H6.44178H4.35548L2.17774 4.98621ZM14.3355 3.50862C13.5003 5.29988 12.5116 7.43004 12.1383 8.24237L11.4596 9.71926V14.3588V18.9982H15.7278H19.9959V14.3593V9.72034H17.8969H15.7978L17.8285 5.12907C18.9453 2.6039 19.8908 0.473483 19.9295 0.394812L20 0.251831H17.927H15.8539L14.3355 3.50862Z" fill="black"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="reviews-item__title">{$e.title}</div>
+                                                    {if $e.desc}
+                                                        <div class="reviews-item__description">{$e.desc}</div>
+                                                    {/if}
+                                                    {if $e.text}
+                                                        <div class="reviews-item__text">{$e.text}</div>
+                                                    {/if}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        {/foreach}
+                    </div>
+                    <div class="reviews__more">
+                        <a href="" class="reviews__more-link">Читать все отзывы</a>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+{/if}

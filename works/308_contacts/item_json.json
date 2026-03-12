@@ -1,0 +1,63 @@
+{
+    "title":{
+        "type":"hidden",
+        "required":false
+    },
+    "worktime":{
+        "type":"text",
+        "size":"50",
+        "malength":"100",
+        "name": "Режим работы"
+    },
+    "phones":{
+        "type":"meta",
+        "name": "Телефоны",
+        "value":{
+            "title":{
+                "type":"generate",
+                "value":"{$tel}"
+            },
+            "tel":{
+                "type":"text",
+                "name": "Номер телефона",
+                "size":"35",
+                "required":true
+            }
+        }
+    },
+    "mail":{
+        "type":"text",
+        "size":"50",
+        "maxlength":"75",
+        "name":"E-Mail"
+    },
+    "address":{
+        "type":"textarea",
+        "name": "Адреc"
+    },
+    "social":{
+        "type":"meta",
+        "name": "Социальные сети",
+        "value":{
+            "title":{
+                "type":"text",
+                "size":"80",
+                "maxlength":"250",
+                "name": "Заголовок",
+                "required":true
+            },
+            "icon":{
+                "type":"image2",
+                "name": "Иконка",
+                "required":true
+            },
+            "link":{
+                "type":"text",
+                "size":"80",
+                "maxlength":"250",
+                "name": "Ссылка",
+                "required":true
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{if $contacts_ver2.worktime!="" || !empty($contacts_ver2.phones) || $contacts_ver2.address!="" || $contacts_ver2.mail!="" || !empty($contacts_ver2.social)}
+    <section class="contacts-block block-padding">
+        <div class="contacts-block__inner">
+            {include file="global:addons.blocks.contacts_ver2.tpl" data=$contacts_ver2}
+        </div>
+    </section>
+{/if}

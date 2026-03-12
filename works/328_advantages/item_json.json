@@ -1,0 +1,19 @@
+{
+    "title":{
+        "type":"text",
+        "size":"80",
+        "maxlength":"250",
+        "name": "Заголовок"
+    },
+    "advantages":{
+        "type":"meta",
+        "name": "Преимущества",
+        "value":{
+            "title":{
+                "type":"textarea",
+                "name": "Преимущество",
+                "required":"true"
+            }
+        }
+    }
+}

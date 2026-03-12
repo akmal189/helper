@@ -1,0 +1,17 @@
+{if $mode == 'main' && !empty($faq_block.list)}
+    <div class="tm_faq_accordion block_padding">
+        {foreach from=$faq_block.list item=e}
+            {if $e.body}
+                <div class="tm_faq_item">
+                    <div class="tm_faq_title"><i></i>{$e.title}</div>
+                    <div class="tm_faq_body">
+                        {$e.body}
+                    </div>
+                    {if $faq_block.btn_text}
+                        <span class="tm_faq_title_link">{$faq_block.btn_text}</span>
+                    {/if}
+                </div>
+            {/if}
+        {/foreach}
+    </div>
+{/if}

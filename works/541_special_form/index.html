@@ -1,0 +1,87 @@
+{if $site.sale_popup.checkbl==""}
+	{if $site.sale_popup.img!="" || $site.sale_popup.form!=""}
+		<div class="popup-sale-overlay" data-bltime="{$site.sale_popup.form_time|default:'5'}000"></div>
+		<div class="popup-sale-wrap">
+			<div class="popup-sale-scroll-wrap">
+				<div class="popup-sale">
+					<div class="popup-sale-header">{$site.sale_popup.title}</div>
+					{if $site.sale_popup.img!=""}
+					<div class="popup-sale-image">
+						<img src="{s3_img src=$site.sale_popup.img.filename width='' height='' method=c}" alt="{$site.sale_popup.title}" />
+					</div>
+					{/if}
+					{if $site.sale_popup.link_btn}
+						<div class="popup-btn-link">
+							<a href="{$site.sale_popup.link_btn}">{$site.sale_popup.btn_text}</a>
+						</div>
+					{else}
+						{if $site.sale_popup.form!=""}
+							<div class="form-block-wrapper popup-sale-form"></div>
+							{literal}
+								<script>
+									$(function(){
+										$.ajax({
+											url: `/-/x-api/v1/public/?method=form/postform&param[form_id]={/literal}{$site.sale_popup.form}{literal}&param[tpl]=db:form.minimal.new.tpl&param[hide_title]=1&param[placeholdered_fields]=1`,
+											dataType: 'json',
+											success: function(response) {
+												if (!response.result.error) {
+													
+													$(response.result.html).appendTo('.form-block-wrapper');
+													s3From.initForms();
+													
+												}
+											}
+										});
+									})
+								</script>
+							{/literal}
+							{*include file="db:form.minimal.new.tpl" anketa=$site.sale_popup.form placeholdered_fields=true hide_title=true*}
+						{/if}
+					{/if}
+				</div>    
+			</div>
+		</div>
+	{/if}
+	{literal}
+	<script>
+		$(function() {
+			
+			var overlay = $('.popup-sale-overlay'),
+				thTime = $(overlay).data('bltime'),
+				wrap = $('.popup-sale-wrap');
+				
+			if (sessionStorage.getItem('hideblock2')) {
+				hide();
+			}else {
+				setTimeout(function(){
+					$(document.documentElement).css('overflow', 'hidden');
+					$(overlay).show();
+					$(wrap).addClass('opened');
+					sessionStorage.setItem('hideblock2', true);
+				}, thTime);
+			}
+		
+			function hide() {
+				overlay.hide();
+				$(wrap).removeClass('opened');
+				$(document.documentElement).css('overflow', '');
+			};
+			
+			$(document).click( function(event){
+			    if( $(event.target).closest('.popup-sale, #tcal, .plupload').length ) 
+			      return;
+			    hide();
+			    event.stopPropagation();
+			})
+		    $(document).keydown(function(event){
+		        if (event.which == 27) {
+		            hide();
+		        }
+		    });
+			
+			$('.popup-sale-close').on('click', hide);
+			
+		});
+	</script>
+	{/literal}
+{/if}

@@ -1,0 +1,16 @@
+{
+	"list": {
+		"type": "meta",
+		"name": "Блоки",
+		"value": {
+			"body": {
+				"type": "html",
+				"name": "Текст"
+			}
+		}
+	},
+	"btn_text": {
+		"type": "text",
+		"name": "Текст кнопки раскрытия"
+	}
+}

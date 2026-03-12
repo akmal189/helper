@@ -1,0 +1,81 @@
+{********** discount in table start *********}
+
+{if $product.discounts_applicable}
+{assign var=discount_product_flag value=7 }
+{capture name=discount_product_data}
+{strip}
+{foreach from=$product.discounts_applicable item=e2}
+{if $discounts[$e2].discount_kind == $discount_product_flag}
+<div class="shop2-discount-item" data-discount-id="{$discounts[$e2].discount_id}"
+    data-discount-type="{$discounts[$e2].discount_type}" data-discount-value="{$discounts[$e2].value}"
+    data-discount-amount-to="{$discounts[$e2].amount}" data-discount-sum-to="{$discounts[$e2].sum}"
+    data-discount-origin-price="{$product.price|price_convert}"
+    data-discount-aggregated="{$discounts[$e2].is_aggregated}" {if $discounts[$e2].discount_type=="price2" }
+    data-discount-price2="{$product.price2}" {elseif $discounts[$e2].discount_type=="price3" }
+    data-discount-price3="{$product.price3}" {/if} {if $discounts[$e2].is_logic_and} data-discount-logic-and="1" {else}
+    data-discount-logic-or="1" {/if} data-price="{$product.price|price_convert}">
+    <div class="shop2-discount-item-title">
+        {*}<span>
+            От
+            {if $discounts[$e2].amount!="0"} {$discounts[$e2].amount} шт. {/if}
+            {if $discounts[$e2].amount!="0" && $discounts[$e2].sum!='0'}
+            {if $discounts[$e2].is_logic_and}
+            и
+            {else}
+            или
+            {/if}
+            {/if}
+            {if $discounts[$e2].sum!='0'} {$discounts[$e2].sum}</span> <span class="fa fa-rouble">₽</span>{/if}{*}
+        <span>{$discounts[$e2].discount_name}</span>
+    </div>
+    <div class="shop2-discount-item-value">
+        {if $discounts[$e2].value}
+        <span class="shop2-discount-item-value-data">{$discounts[$e2].value}</span>
+        {if $discounts[$e2].discount_type == 'percent'}
+        <span class="fa fa-rouble"> %</span>
+        {else}
+        <span class="fa fa-rouble"> ₽</span>
+        {/if}
+        {/if}
+    </div>
+    <div class="shop2-discount-item-price-wrapper">
+        <div class="shop2-discount-item-price-value">
+            <span class="shop2-discount-item-price-value-data"></span>
+            <span class="fa fa-rouble"> ₽</span>
+        </div>
+        {*<span class="shop2-discount-item-price-image">
+            <img src="http://discount-table.skorihv.21.oml.ru/d/70h70.jpg" alt="" width="50" height="50" />
+        </span>*}
+    </div>
+    {* $discounts[$e2].discount_name *}
+</div>
+{/if}
+{/foreach}
+{/strip}
+{/capture}
+{if $smarty.capture.discount_product_data != ""}
+<div class="shop2-discount-wrapper" data-kind-id="{$product.kind_id}">
+    {*}<div class="shop2-discount-title">Цена со скидкой</div>{*}
+    <div class="shop2-discount-items">
+        <div class="shop2-discount-item shop2-discount-item0 shop2-discount-item-active" data-discount-id="1"
+            data-discount-value="1" data-price="{$product.price|price_convert}"
+            data-discount-origin-price="{$product.price|price_convert}" data-discount-aggregated="0"
+            data-discount-sum-to="0" data-discount-amount-to="0">
+            <div class="shop2-discount-item-title">ОПТ 1</div>
+            <div class="shop2-discount-item-value"></div>
+            <div class="shop2-discount-item-price-wrapper">
+                <div class="shop2-discount-item-price-value">
+                    <span class="shop2-discount-item-price-value-data">{$product.price|price_convert}</span>
+                    <span class="fa fa-rouble"> ₽</span>
+                </div>
+                {* <span class="shop2-discount-item-price-image">
+                    <img src="http://discount-table.skorihv.21.oml.ru/d/70h70.jpg" alt="" width="50" height="50" />
+                </span> *}
+            </div>
+        </div>
+        {$smarty.capture.discount_product_data}
+    </div>
+</div>
+{/if}
+{/if}
+{********** discount in table end *********}

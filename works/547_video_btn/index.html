@@ -1,0 +1,60 @@
+{if $product.meta.video!=''}
+    <div class="play_video-wrap">
+        <div class="play_video-text">Смотреть видео </div>
+        <div class="sh-btn prod">
+            <a class="play_video"  href="javascript:void(0)"></a>
+        </div>
+    </div>
+{/if}
+
+
+{if $product.meta.video}
+<div id="pauseYoutube"></div>
+
+<div class="sample-popup">
+	<div id="popupform">
+		 <iframe src="https://rutube.ru/play/embed/{$product.meta.video}" width="100%" height="100%" frameborder="0" allowfullscreen="">
+		    Ваш браузер не поддерживает плавающие фреймы!
+		 </iframe>
+	</div>
+	<div class="sample-close"></div>
+</div>
+
+
+<div class="video_block">
+<div class="sample-closed"></div>
+<iframe src="https://rutube.ru/play/embed/{$product.meta.video}" width="100%" height="100%" frameborder="0" allowfullscreen="">
+Ваш браузер не поддерживает плавающие фреймы!
+</iframe>
+</div>
+<div class="bgbg"></div>
+{literal}
+<script>
+	$(function(){
+	
+	$('.play_video, .play_video-wrap .play_video-text').click(function(){
+		$('.video_block, .bgbg').fadeIn();
+	});
+	$('.sample-closed').click(function(){
+		$('.video_block, .bgbg').fadeOut();
+		jQuery("iframe").each(function() {
+			jQuery(this)[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*')
+		});
+	});
+	
+	$(document).mouseup(function (e){ // событие клика по веб-документу
+		var div = $(".video_block"); // тут указываем ID элемента
+		if (!div.is(e.target) // если клик был не по нашему блоку
+		    && div.has(e.target).length === 0) { // и не по его дочерним элементам
+			  $(".video_block, .bgbg").fadeOut();
+		      jQuery("iframe").each(function() {
+			    jQuery(this)[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*')
+			  });
+		}
+	});
+	
+	
+	});
+</script>
+{/literal}
+{/if}

@@ -1,0 +1,22 @@
+{
+    "desc": {
+        "type": "text",
+        "name": "Подзаголовок"
+    },
+    "yes_btn": {
+        "type": "text",
+        "name": "Текст кнопки для согласия",
+        "size": 80,
+        "maxlength": 250
+    },
+    "no_btn": {
+        "type": "text",
+        "name": "Текст кнопки для отказа",
+        "size": 80,
+        "maxlength": 250
+    },
+    "hide_block": {
+        "type": "checkbox",
+        "name": "Скрыть блок"
+    }
+}

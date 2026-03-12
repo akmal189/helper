@@ -1,0 +1,19 @@
+{if $recent && $mode != 'cart'}
+    <div class="recent-block block_padding{if !preg_match("/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i", $smarty.server.HTTP_USER_AGENT)} wow fadeInUp{/if}" data-wow-delay="0.1s" data-wow-offset="200">
+        <div class="recent-block__inner">
+            <div class="recent-block__title">Вы смотрели</div>
+            <div class="recent-block__list recent-block__list--js">
+                {foreach from=$recent item=e}
+                    {counter assign=recent_counter name=recent_counter_name}
+                    {if $recent_counter<10}
+                        {include file="global:shop2.2.140-recent-product-list-thumbs.tpl" product=$e}
+                    {/if}
+                {/foreach}
+            </div>
+        </div>
+    </div>
+{/if}
+
+
+<link rel="stylesheet" href="/g/libs/jquery-slick/1.8.0/slick.css">
+<script src="/g/libs/jquery-slick/1.8.0/slick.min.js" charset="utf-8"></script>

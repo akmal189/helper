@@ -1,0 +1,32 @@
+{
+    "title" : {
+        "type" : "text",
+        "name":"Заголовок",
+        "size":"80",
+        "maxlenght":"250"
+    },
+    "list" : {
+        "type" : "meta",
+        "name":"Список",
+        "value" : {
+            "title" : {
+                "type" : "text",
+                "name":"Заголовок",
+                "size":"50",
+                "maxlenght":"250",
+                "required":true
+            },
+            "image" : {
+                "type" : "image2",
+                "required": true,
+                "name":"Картинка",
+                "svg_body":true,
+                "note":"Минимальные размеры картинки 45px * 45px",
+                "cropper":{
+                    "width":"45",
+                    "height": "45"
+                }
+            }
+        }
+    }
+}

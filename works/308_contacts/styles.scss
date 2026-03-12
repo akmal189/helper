@@ -1,0 +1,27 @@
+@import "global:templates/addons/lp_blocks/css/_addons.contacts_ver2_block.scss";
+@include addons-contacts-ver2();
+
+.contacts-block {
+	margin-bottom: 30px;
+	&__inner {
+		border-top: 1px solid #ccc;
+		.default-contacts-two {
+			background: none;
+		}
+		.default-contacts-two--phone a, .default-contacts-two--mail a {
+			cursor: pointer;
+			&:hover {
+				color: #800;
+			}
+		}
+		.default-contacts-two .block > div:before {
+			background-color: #8fa61b;
+		}
+		.default-contacts-two .block {
+			@media all and (max-width: 580px) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}

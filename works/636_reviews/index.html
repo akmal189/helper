@@ -1,0 +1,74 @@
+{if !empty($rev_block.list)}
+{* Подключение стилей *}
+<link rel="stylesheet" href="/g/libs/tiny-slider/2.9.2/css/tiny-slider.min.css">
+<link rel="stylesheet" href="images/addon_style.scss.css">
+{* /Подключение стилей *}
+
+{* Подключение разметки *}
+<div class="reviews">
+	<div class="reviews__container">
+		<div class="reviews__header">
+			<div class="reviews__title-wrapper">
+				<div class="reviews__title">{$rev_block.title}</div>
+				<div class="reviews__description">{$rev_block.sub_title}</div>
+			</div>
+			{if $rev_block.link_text}<div class="reviews__more">
+				<a href="{$rev_block.link}" class="reviews__more-link">{$rev_block.link_text}</a>
+			</div>{/if}
+		</div>
+		<div class="reviews__items">
+			{foreach from=$rev_block.list item=e}
+				<div class="reviews__item">
+					<div class="reviews-item">
+						<div class="reviews-item__header">
+							<div class="reviews-item__photo-wrapper">
+								<img src="{s3_img src=$e.img.filename width=80 height=80 method=r}" alt="" class="reviews-item__photo">
+							</div>
+							<div class="reviews-item__title-wrapper">
+								<div class="reviews-item__title">{$e.b_name}</div>
+								<div class="reviews-item__description">{$e.comp_name}</div>
+							</div>
+						</div>
+						<div class="reviews-item__video-wrapper">
+							{if $e.vk_video && $e.vk_poster.filename}
+								{assign var=vk2 value=$e.vk_video}
+								{assign var="vk22" value="_"|explode:$vk2}
+								{assign var=vk21 value=$vk22.0}
+								{assign var=vk22 value=$vk22.1}
+								<div class="reviews-item__video-poster" data-html="<iframe src=&quot;https://vk.com/video_ext.php?oid=-{$vk21}&id={$vk22}&js_api=1&quot; width=&quot;560&quot; height=&quot;315&quot; allow=&quot;autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;&quot; frameborder=&quot;0&quot; allowfullscreen></iframe>">
+									<img src="{s3_img src=$e.vk_poster.filename width=600}" alt="" class="reviews-item__video-poster-image">
+									<div class="reviews-item__video-title">{$e.video_name}</div>
+								</div>
+								
+							{else}
+								<div class="reviews-item__video-poster" data-html="<iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/{$e.id_video}?enablejsapi=1&version=3&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;></iframe>">
+									<img src="//img.youtube.com/vi/{$e.id_video}/maxresdefault.jpg" alt="" class="reviews-item__video-poster-image">
+									<div class="reviews-item__video-title">{$e.video_name}</div>
+								</div>
+							{/if}
+							
+						</div>
+						<div class="reviews-item__text">{$e.video_text}</div>
+					</div>
+				</div>
+			{/foreach}
+		</div>
+		<div class="reviews__controls">
+			<button type="button" class="reviews__prev-button"></button>
+			<div class="reviews__nav">
+				{foreach from=$rev_block.list item=e}
+					<button type="button" class="reviews__nav-button" style="display: none;"></button>
+				{/foreach}
+			</div>
+			<button type="button" class="reviews__next-button"></button>
+		</div>
+	</div>
+</div>
+{* /Подключение разметки *}
+
+{* Подключение скриптов *}
+<script src="/g/libs/tiny-slider/2.9.2/js/tiny-slider.min.js"></script>
+<script src="https://vk.com/js/api/videoplayer.js"></script>
+<script src="images/addon_site.js"></script>
+{* /Подключение скриптов *}
+{/if}

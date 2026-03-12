@@ -1,0 +1,67 @@
+{
+	"title": {
+		"name": "Заголовок",
+		"type": "text",
+		"required": true,
+		"size": "50",
+		"maxlength": "250"
+	},
+	"desc": {
+		"type": "text",
+		"name": "Описание",
+		"size": 80,
+		"maxlength": 250
+	},
+	"link": {
+		"type": "text",
+		"name": "Ссылка кнопки",
+		"size": 80,
+		"maxlength": 250
+	},
+	"btn_text": {
+		"type": "text",
+		"name": "Текст кнопки"
+	},
+	"list": {
+		"type": "meta",
+		"name": "Блоки",
+		"value": {
+			"video_id": {
+				"type": "text",
+				"name": "ID видео YouTube",
+				"note": "Пример: https://www.youtube.com/embed/этот ID нужно указывать или https://youtube.com/shorts/(этот ID - cZiZEfOSEJ4) ?si=09mDopm9Nxe226QW",
+				"size": 80,
+				"maxlength": 250
+			},
+			"video_id2": {
+				"type": "text",
+				"name": "ID видео RuTube",
+				"note": "Пример: https://rutube.ru/play/embed/этот ID нужно указывать",
+				"size": 80,
+				"maxlength": 250
+			},
+			"video_title": {
+				"type": "hidden",
+				"name": "Заголовок для видео",
+				"size": 80,
+				"maxlength": 250
+			},
+			"image": {
+				"type": "image2",
+				"name": "Изображение",
+				"required": true,
+				"note": "Оптимальный размер 600х600, для отображения необходимо указать ID видео"
+			},
+			"desc": {
+				"type": "text",
+				"name": "Описание",
+				"size": 80,
+				"maxlength": 250
+			},
+			"text": {
+				"type": "html",
+				"name": "Текст"
+			}
+		}
+	}
+}

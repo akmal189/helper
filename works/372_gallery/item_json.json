@@ -1,0 +1,13 @@
+{
+	"title" : {
+		"type" : "text",
+		"size":"80",
+		"maxlength":"400",
+		"name": "Заголовок",
+		"required": true
+	},
+	"images" : {
+		"type" : "multiimage2",
+		"name" : "Выбрать изображения"
+	}
+}

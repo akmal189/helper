@@ -1,0 +1,64 @@
+{
+	"title": {
+		"type": "generate"
+	},
+	"promo": {
+        "type": "meta",
+        "name": "Акция промокод",
+        "single": true,
+        "value": {
+            "promo": {
+                "type": "text",
+                "name": "Промокод",
+                "size": 20,
+                "maxlength": 250
+            },
+            "link": {
+                "type": "text",
+                "name": "Ссылка",
+                "size": 70,
+                "maxlength": 250
+            },
+            "image": {
+                "type": "image2",
+                "name": "Изображение",
+                "note": "Рекомендуемая ширина изображения 260px"
+            }
+        }
+    },
+    "dis": {
+        "type": "meta",
+        "name": "Скидки",
+        "single": true,
+        "value": {
+            "subtitle": {
+                "type": "text",
+                "name": "Подзаголовок",
+                "size": 50,
+                "maxlength": 250
+            },
+            "image": {
+                "type": "image2",
+                "name": "Изображение",
+                "note": "Рекомендуемый размер изображения 138*138px",
+                "required": true
+            },
+            "text": {
+                "type": "html",
+                "name": "Текст"
+            },
+            "link_title": {
+                "type": "text",
+                "name": "Текст кнопки",
+                "size": 50,
+                "maxlength": 250
+            },
+            "link": {
+                "type": "text",
+                "name": "Ссылка кнопки",
+                "size": 70,
+                "maxlength": 250
+            }
+        }
+    }
+}

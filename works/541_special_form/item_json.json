@@ -1,0 +1,37 @@
+"sale_popup":{
+	"type": "meta",
+	"single": true,
+	"name": "Всплывающая форма Спецпредложение",
+	"value": {
+		"img":{
+			"name":"Картинка",
+			"type":"image2",
+			"format_id":1,
+			"note":"Размер картинки 540на250px"
+		},
+		"form" : {
+			"type" : "anketa",
+			"name" : "Форма"
+		},
+		"form_time": {
+			"name": "Время для формы (значение в секундах)",
+			"type": "text",
+			"size": "2",
+			"maxlength": "250"
+		},
+		"link_btn": {
+			"type": "text",
+			"name": "Ссылка кнопки",
+			"size": 80,
+			"maxlength": 250
+		},
+		"btn_text": {
+			"type": "text",
+			"name": "Текст кнопки"
+		},
+		"checkbl": {
+			"name": "Скрыть блок",
+			"type": "checkbox"
+		}
+	}
+}

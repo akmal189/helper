@@ -1,0 +1,45 @@
+{if ($product.meta.video_link || $product.meta.video_rt || $product.meta.video_yt) && $product.meta.video_preview.filename}
+    <div class="btn_video">
+        {assign var=vk1 value=$product.meta.video_link}
+        {assign var="vk11" value="_"|explode:$vk1}
+        {assign var=vk10 value=$vk11.0}
+        {assign var=vk20 value=$vk11.1}
+        {if $product.meta.video_link}
+            <a href="https://vk.com/video_ext.php?oid=-{$vk10}&id={$vk20}&js_api=1"
+                data-fancybox="gallery"
+                data-type="iframe">
+                <div class="tit">Смотреть видео</div>
+                <span class="video">
+                    <img style="max-height: 100%;max-width: 50px;" src="{s3_img width=$shop2.my.card_imgWidth|default:540 height=$shop2.my.card_imgHeight|default:540 src=$product.meta.video_preview.filename method=$shop2.my.s3_img_method}" alt="{$product.name|htmlspecialchars}" title="{$product.name|htmlspecialchars}">
+                    <span class="product-video-thumb-icon"></span>
+                </span>
+            </a>
+        {elseif $product.meta.video_rt}
+            <a href='data:text/html,<iframe width=&quot;100%&quot; height=&quot;100%&quot;  src=&quot;https://rutube.ru/play/embed/{$product.meta.video_rt}&quot; frameBorder=&quot;0&quot; allow=&quot;clipboard-write; autoplay&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>'
+                data-fancybox="gallery"
+                data-type="iframe">
+                <div class="tit">Смотреть видео</div>
+                <span class="video">
+                    <img style="max-height: 100%;max-width: 50px;" src="{s3_img width=$shop2.my.card_imgWidth|default:540 height=$shop2.my.card_imgHeight|default:540 src=$product.meta.video_preview.filename method=$shop2.my.s3_img_method}" alt="{$product.name|htmlspecialchars}" title="{$product.name|htmlspecialchars}">
+                    <span class="product-video-thumb-icon"></span>
+                </span>
+            </a>
+        {else}
+            <a href="https://www.youtube.com/embed/{$product.meta.video_yt}"
+                data-fancybox="gallery"
+                data-type="iframe">
+                <div class="tit">Смотреть видео</div>
+                <span class="video">
+                    <img style="max-height: 100%;max-width: 50px;" src="{s3_img width=$shop2.my.card_imgWidth|default:540 height=$shop2.my.card_imgHeight|default:540 src=$product.meta.video_preview.filename method=$shop2.my.s3_img_method}" alt="{$product.name|htmlspecialchars}" title="{$product.name|htmlspecialchars}">
+                    <span class="product-video-thumb-icon"></span>
+                </span>
+            </a>
+        {/if}
+    </div>
+{/if}
+
+
+{if $mode == "product"}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+{/if}

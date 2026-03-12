@@ -1,0 +1,78 @@
+{if $fixed_btn_1851.list || $fixed_btn_1851.phone}
+	<div class="msgrs real-mobile js-msgrs{if preg_match("/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i", $smarty.server.HTTP_USER_AGENT)} msgrs-mobile{/if}">
+		{if $fixed_btn_1851.phone}
+			<div class="msgrs_item phone">
+				<a href="tel:{$fixed_btn_1851.phone|regex_replace:"/[^\+\d]/":""}">
+					<div class="msgrs_icon"></div>
+					<span>Позвоните нам</span>
+				</a>
+			</div>
+		{/if}
+		<div class="msgrs_but js-msgrs-button">
+			<div class="msgrs_icon"></div>
+		</div>
+		<ul class="msgrs_list js-msgrs-list">
+			{foreach from=$fixed_btn_1851.list item=e key=k}
+				{if $k<5}
+					<li class="msgrs_item">
+						<a href="{$e.link}" target="_blank">
+							<span class="msgrs_icon">
+							<img src="{s3_img width=50 height=50 method=r src=$e.image.filename}" alt="{$e.title}" />
+						</span>
+							<span>{$e.title}</span>
+						</a>
+					</li>
+				{/if}
+			{/foreach}
+			<li class="msgrs_item onicon-btn">
+				<a href="javascript:void(0);">
+					<span class="msgrs_icon">
+						<img src="/g/templates/mgsite/img/messangers/message_chat.svg" alt="">
+					</span>
+					<span>Онлайн чат</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	{literal}
+		<style>
+			.onicon-button, #chat24-root {display: none !important;}
+		</style>
+		<script>
+			(()=>{
+
+				document.addEventListener('DOMContentLoaded', (e)=>{
+				
+					$('.msgrs .onicon-btn a').on('click', function(){
+						document.querySelector('.onicon-button').click();
+					})
+					
+					let msgrs = document.querySelector('.js-msgrs')
+					let msgrsButton = msgrs.querySelector('.js-msgrs-button')
+					let msgrsList = document.querySelector('.js-msgrs-list')
+					
+					if(msgrsButton) {
+						msgrsButton.addEventListener('click', (e)=> {
+							msgrsList.classList.toggle('opened')
+							e.target.classList.toggle('opened')
+						})
+					}
+				
+					document.addEventListener('click', (e) => {
+						
+						if (e.target.closest('.js-msgrs a')) {
+							
+						} else if (!e.target.closest('.js-msgrs')) {
+							msgrsList.classList.remove('opened')
+							msgrsButton.classList.remove('opened')
+							$('.msgrs_icon').removeClass('opened')
+						}
+					})
+				
+				})
+				
+			})()
+		</script>
+	{/literal}
+{/if}

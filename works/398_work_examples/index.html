@@ -1,0 +1,15 @@
+{if !empty($examples.slider1)}
+    <section class="works-example block-padding">
+        <div class="works-example__inner block-width">
+            {include file="global:addons.blocks.examples.tpl" data=$examples js_class="examples"}
+            {if $examples.btn_text && $examples.link}
+                <div class="works-example__btn">
+                    <a href="{$examples.link}">{$examples.btn_text}</a>
+                </div>
+            {/if}
+        </div>
+    </section>
+{/if}
+
+<link rel="stylesheet" href="/g/libs/jquery-slick/1.8.0/slick.css">
+<script src="/g/libs/jquery-slick/1.8.0/slick.min.js" charset="utf-8"></script>

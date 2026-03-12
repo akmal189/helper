@@ -1,0 +1,21 @@
+@import "global:templates/addons/forms/adults-form/css/_addons.adults.popup.scss";
+@include addons-adults-form();
+.popup-form-section__inner {
+    border: none;
+}
+.popup-form-section__button {
+    background: #292929;
+    border-color: #292929;
+    color: #fff;
+    border-radius: 250px;
+    &:not(.popup-form-section__button--continue):hover {
+    	background: #438cd6;
+    	border-color: #438cd6;
+    }
+}
+.popup-form-section__button--continue:hover {
+    color: #000;
+}
+.popup-form-section__inner {
+	border-radius: 10px;
+}

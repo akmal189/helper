@@ -1,0 +1,31 @@
+{
+	"title": {
+		"type": "generate"
+	},
+	"phone": {
+		"type": "text",
+		"name": "Номер телефона",
+		"size": 50,
+		"maxlength": 20
+	},
+	"list": {
+		"type": "meta",
+		"name": "Мессенджеры",
+		"note": "Не более 5 блоков",
+		"value": {
+			"image": {
+				"type": "image2",
+				"name": "Изображение",
+				"note": "Рекомендуемый размер 50*50px",
+				"required": true
+			},
+			"link": {
+				"type": "text",
+				"name": "Ссылка",
+				"size": 70,
+				"maxlength": 250,
+				"required": true
+			}
+		}
+	}
+}

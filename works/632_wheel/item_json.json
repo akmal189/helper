@@ -1,0 +1,323 @@
+{
+    "visual_settings": {
+        "type": "meta",
+        "single": true,
+        "name": "Настройки отображения",
+        "value": {
+            "title": {
+                "type": "hidden",
+                "required": false
+            },
+            
+            "double": {
+                "type": "checkbox",
+                "no_empty": true,
+                "name": {
+                    "ru": "Дублировать секторы",
+                    "en": "Double sectors"
+                },
+                "defaults": {
+                    "ru": "1",
+                    "en": "1"
+                }
+            },
+            "infinite": {
+                "type": "checkbox",
+                "no_empty": true,
+                "name": {
+                    "ru": "Бесконечное вращение",
+                    "en": "Endless rotation"
+                },
+                "defaults": {
+                    "ru": "1",
+                    "en": "1"
+                }
+            }
+        }
+    },
+
+    "main_settings": {
+        "type": "meta",
+        "single": true,
+        "name": "Основные настройки",
+        "value": {
+            "title": {
+                "type": "hidden",
+                "required": false
+            },
+            "title1": {
+                "type": "html",
+                "name": {
+                    "ru": "Заголовок",
+                    "en": "Title"
+                },
+                "mode": "inline",
+                "toolbar": "clipboard, basicstyles, links, shop, tools, mode",
+                "height": 36,
+                "defaults": {
+                    "ru": "Испытайте свою удачу",
+                    "en": "Try your luck"
+                }
+            },
+            "desc1": {
+                "type": "html",
+                "name": {
+                    "ru": "Описание",
+                    "en": "Description"
+                },
+                "mode": "inline",
+                "toolbar": "clipboard, basicstyles, styles, colors, /, links, shop, tools, mode",
+                "height": 116,
+                "defaults": {
+                    "ru": "У вас есть шанс получить крутой бонус! Вам стоит всего лишь нажать кнопку ниже.",
+                    "en": "You have a chance to get a cool bonus! All you have to do is click the button below"
+                }
+            },
+            "btn": {
+                "type": "text",
+                "name": "Название кнопки",
+                "maxlength": "200",
+                "size": "50",
+                "defaults": {
+                    "ru": "Вращать",
+                    "en": "Spin"
+                }
+            },
+            "titleform": {
+                "type": "hidden",
+                "name": {
+                    "ru": "Заголовок формы",
+                    "en": "Title form"
+                },
+                "mode": "inline",
+                "toolbar": "clipboard, basicstyles, links, shop, tools, mode",
+                "height": 36,
+                "defaults": {
+                    "ru": "Ура! Вы выиграли!",
+                    "en": "Hooray! You have won!"
+                }
+            },
+            "descform": {
+                "type": "html",
+                "name": {
+                    "ru": "Описание формы",
+                    "en": "Description form"
+                },
+                "mode": "inline",
+                "toolbar": "clipboard, basicstyles, styles, colors, /, links, shop, tools, mode",
+                "height": 116,
+                "defaults": {
+                    "ru": "Поздравляем! Оставьте свой номер телефона и получите приз на барабане!",
+                    "en": "Enter your phone number, get a prize on the reel!"
+                }
+            },
+
+            "sectors": {
+                "type": "meta",
+                "name": "Секторы",
+                "single": true,
+                "value": {
+                    "title": {
+                        "type": "hidden"
+                    },
+                    "sector1": {
+                        "type": "text",
+                        "size": 70,
+                        "name": {
+                            "ru": "Сектор #1",
+                            "en": "Title"
+                        },
+                        "maxlength": 500
+                    },
+                    "sector2": {
+                        "type": "text",
+                        "size": 70,
+                        "name": {
+                            "ru": "Сектор #2",
+                            "en": "Title"
+                        },
+                        "maxlength": 500
+                    },
+                    "sector3": {
+                        "type": "text",
+                        "size": 70,
+                        "name": {
+                            "ru": "Сектор #3",
+                            "en": "Title"
+                        },
+                        "maxlength": 500
+                    },
+                    "sector4": {
+                        "type": "text",
+                        "size": 70,
+                        "name": {
+                            "ru": "Сектор #4",
+                            "en": "Title"
+                        },
+                        "maxlength": 500
+                    },
+                    "sector5": {
+                        "type": "text",
+                        "size": 70,
+                        "name": {
+                            "ru": "Сектор #5",
+                            "en": "Title"
+                        },
+                        "maxlength": 500
+                    },
+                    "sector6": {
+                        "type": "text",
+                        "size": 70,
+                        "name": {
+                            "ru": "Сектор #6",
+                            "en": "Title"
+                        },
+                        "maxlength": 500
+                    },
+                    "sector7": {
+                        "type": "text",
+                        "size": 70,
+                        "name": {
+                            "ru": "Сектор #7",
+                            "en": "Title"
+                        },
+                        "maxlength": 500
+                    },
+                    "sector8": {
+                        "type": "text",
+                        "size": 70,
+                        "name": {
+                            "ru": "Сектор #8",
+                            "en": "Title"
+                        },
+                        "maxlength": 500
+                    }
+                },
+                "defaults": {
+                    "ru": {
+                        "sector1": "Скидка 5%",
+                        "sector2": "Скидка 7%",
+                        "sector3": "Скидка 15%",
+                        "sector4": "100 бонусов",
+                        "sector5": "200 бонусов"
+                    }
+                }
+            },
+            "form": {
+                "type": "anketa",
+                "required": true,
+                "name": {
+                    "ru": "Форма",
+                    "en": "Form"
+                },
+                "defaults": {
+                    "ru": {
+                        "name": "Колесо фортуны",
+                        "submit_name": "Получить приз",
+                        "success_note": "Поздравляем! Не пропустите звонок, мы скоро свяжемся с Вами!",
+                        "dictionaries": {
+                            "prize": {
+                                "type_code": "hidden",
+                                "name": "Приз",
+                                "required": true
+                            },
+                            "phone": {
+                                "type_code": "phone",
+                                "name": "Телефон",
+                                "required": true
+                            },
+                            "personal_bottom": {
+                                "type_code": "checkbox",
+                                "name": "Я согласен на обработку моих <a href=\"/user/agreement\">персональных данных</a>",
+                                "required": true
+                            }
+                        }
+                    },
+                    "en": {
+                        "name": "Wheel of fortune",
+                        "submit_name": "Send",
+                        "success_note": "Congratulations! Don't miss the call, we will contact you soon!",
+                        "dictionaries": {
+                            "prize": {
+                                "type_code": "hidden",
+                                "name": "Prize",
+                                "required": true
+                            },
+                            "phone": {
+                                "type_code": "phone",
+                                "name": "Phone",
+                                "required": true
+                            },
+                            "personal_bottom": {
+                                "type_code": "checkbox",
+                                "name": "I agree to the processing of my <a href=\"/\">personal data</a>",
+                                "required": true
+                            }
+                        }
+                    }
+                }
+            },
+            "notes": {
+                "type": "html",
+                "name": {
+                    "ru": "Примечание",
+                    "en": "Note"
+                },
+                "mode": "inline",
+                "toolbar": "clipboard, basicstyles, links, shop, tools, mode",
+                "height": 36,
+                "defaults": {
+                    "ru": "<a href=\"#\">Правила акции</a>",
+                    "en": "<a href=\"#\">Promotion rules</a>"
+                }
+            },
+            "sendmessege": {
+                "type": "html",
+                "name": {
+                    "ru": "Результат",
+                    "en": "Text after sending"
+                },
+                "mode": "inline",
+                "toolbar": "clipboard, basicstyles, links, shop, tools, mode",
+                "height": 36,
+                "defaults": {
+                    "ru": "Ваш выигрыш &mdash;",
+                    "en": "Your winnings &mdash;"
+                }
+            },
+            "finish": {
+                "type": "text",
+                "name": {
+                    "ru": "Название кнопки после отправки формы",
+                    "en": "Button title after submitting the form"
+                },
+                "maxlength": "200",
+                "size": "50",
+                "defaults": {
+                    "ru": "Спасибо, я понял(а)",
+                    "en": "Thanks I got it"
+                }
+            },
+            "bg_image": {
+                "type": "image2",
+                "name": {
+                    "ru": "Фоновое изображение",
+                    "en": "Icon"
+                }
+            },
+            "title_tag": {
+                "type": "hidden",
+                "name": "title_tag"
+            }
+        }
+    },
+    "time": {
+		"type": "hidden",
+		"note": "Указывать в секундах",
+		"name": "Время через сколько будет всплывать окно"
+	},
+    "hide_block": {
+		"type": "checkbox",
+		"name": "Скрыть блок"
+	}
+}

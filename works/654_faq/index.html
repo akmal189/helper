@@ -1,0 +1,20 @@
+{if !empty($calc_faq.list)}
+	<div class="tm_faq_block">
+		<div class="tm_faq_left">
+			{foreach from=$calc_faq.list item=e key=k}
+				{if $e.body}
+					<div class="tm_faq_title{if $k == 0} active{/if}"><i></i>{$e.title}</div>
+				{/if}
+			{/foreach}
+		</div>
+		<div class="tm_faq_right">
+			{foreach from=$calc_faq.list item=e key=k}
+				{if $e.body}
+					<div class="tm_faq_body{if $k == 0} active{/if}">
+						{$e.body}
+					</div>
+				{/if}
+			{/foreach}
+		</div>
+	</div>
+{/if}

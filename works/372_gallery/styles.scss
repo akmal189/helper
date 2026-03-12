@@ -1,0 +1,23 @@
+@import "global:/s3/makeup/sass/mixins/flex.scss";
+@import "global:/s3/makeup/sass/mixins/transform.scss";
+@import "global:/s3/makeup/sass/functions/data-image-svg.scss";
+
+@import "global:templates/addons/lp_blocks/css/_addons.gallery2_block.scss"; 
+
+@include addons-gallery2();
+
+[id ^= sandbox_theme_panel] {
+	width: 120px!important; 
+	font-size: 12px !important;
+	right: 0;
+	top: auto !important;
+	bottom: 0;
+}
+
+.mosaic-s3-include--u-ijewng2lz {
+	margin: 20px 0 0;
+}
+
+.default-gallery2--title {
+	font-family: El Messiri, sans-serif;
+}

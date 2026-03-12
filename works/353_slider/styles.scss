@@ -1,0 +1,6 @@
+@import "global:/s3/makeup/sass/mixins/transform.scss";
+@import "global:/s3/makeup/sass/mixins/flex.scss";
+@import "global:/s3/makeup/sass/functions/data-image-svg.scss";
+@import "global:templates/addons/slider/type_all/css/_mg.slider.type.main.scss"; 
+
+@include addons-slider-type-all($mg-slick-prefix: 'mg-slick-');

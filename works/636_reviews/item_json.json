@@ -1,0 +1,68 @@
+{
+	"title":{
+		"type":"text",
+		"name":"Заголовок блока",
+		"maxlength":255
+	},
+	"sub_title":{
+		"type":"text",
+		"name":"Подзаголовок блока",
+		"maxlength":255
+	},
+	"link_text":{
+		"type":"text",
+		"name":"Текст кнопки",
+		"maxlength":255
+	},
+	"link":{
+		"type":"text",
+		"name":"Ссылка кнопки",
+		"maxlength":255
+	},
+	"list":{
+		"type":"meta",
+		"name":"Отзывы",
+		"value": {
+			"b_name":{
+				"type":"text",
+				"name":"Ф.И.О",
+				"maxlength":255
+			},
+			"comp_name":{
+				"type":"text",
+				"name":"Название компании",
+				"maxlength":255
+			},
+			"img":{
+				"type":"image2",
+				"name":"Изображение",
+				"note":"Оптимальный размер 80х80"
+			},
+			"id_video":{
+				"type":"text",
+				"name":"ID видео ютуб",
+				"maxlength":255
+			},
+			"video_name":{
+				"type":"text",
+				"name":"Название видео",
+				"maxlength":255
+			},
+			"video_text":{
+				"type":"textarea",
+				"name":"Описание",
+				"maxlength":255
+			},
+			"vk_video": {
+				"type": "text",
+				"name": "ID видео VK",
+				"maxlength": 250
+			},
+			"vk_poster": {
+				"type": "image2",
+				"name": "Постер для видео VK",
+				"note": "Оптимальный размер 600х400"
+			}
+		}
+	}
+}

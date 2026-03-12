@@ -1,0 +1,17 @@
+{
+	"title": {
+		"type": "generate"
+	},
+	"list": {
+		"type": "meta",
+		"name": "Добавить слайд",
+		"value": {
+			"image": {
+				"type": "image2",
+				"name": "Изображение",
+				"note": "Рекомендуемый размер изображения 1680*700px",
+				"required": true
+			}
+		}
+	}
+}

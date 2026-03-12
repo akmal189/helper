@@ -1,0 +1,41 @@
+{
+    "title":{
+        "type":"hidden",
+        "required":false
+    },
+    "slider1_title":{
+        "type":"text",
+        "name":"Заголовок блока",
+        "size":"60",
+        "maxlength":250
+    },
+    "slider1":{
+        "type":"meta",
+        "name":"Список картинок",
+        "value":{
+            "title":{
+                "type":"text",
+                "name":"Название картинки",
+                "size": 60,
+                "maxlength": 60,
+                "required": true
+            },
+            "image":{
+                "type":"image2",
+                "name": "Картинка",
+                "required":true,
+                "note":"Размер картинки 1480px * 600px"
+            }
+        }
+    },
+    "btn_text": {
+		"type": "text",
+		"name": "Текст кнопки"
+	},
+	"link": {
+		"type": "text",
+		"name": "Ссылка",
+		"size": 80,
+		"maxlength": 250
+	}
+}

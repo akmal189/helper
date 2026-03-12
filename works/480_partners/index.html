@@ -1,0 +1,37 @@
+{if $partners_block.desc || !empty($partners_block.list)}
+    <section class="partners-block block-padding">
+        <div class="partners-block__inner block-width">
+            <div class="partners-block__header">
+                <div class="partners-block__text">
+                    <div class="partners-block__title block-title">{$partners_block.title}</div>
+                    {if $partners_block.desc}
+                        <div class="partners-block__desc">{$partners_block.desc}</div>
+                    {/if}
+                </div>
+                <div class="partners-block__arrows"></div>
+            </div>
+            {if !empty($partners_block.list)}
+                <div class="partners-block__list">
+                    <div class="partners-block__slider js-slider-init">
+                        {foreach from=$partners_block.list item=e}
+                            {if $e.image.filename}
+                                <div class="slick-slide">
+                                    <div>
+                                        <div class="partners-block__item">
+                                            <a href="{$e.link|default:'javascript:void(0);'}">
+                                                <img src="{s3_img src=$e.image.filename width=500}" alt="{$e.title}">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {/if}
+                        {/foreach}
+                    </div>
+                </div>
+            {/if}
+        </div>
+    </section>
+{/if}
+
+<link rel="stylesheet" href="/g/libs/jquery-slick/1.8.0/slick.css">
+<script src="/g/libs/jquery-slick/1.8.0/slick.min.js" charset="utf-8"></script>

@@ -1,0 +1,14 @@
+@import "global:templates/addons/lp_blocks/css/_addons.steps_ver7.scss";
+@include addons-steps-ver7();
+
+.work-steps {
+	margin-bottom: 50px;
+	&__inner {
+		
+		.default-steps-ver7 {
+			padding: 0;
+			background: none;
+			
+		}
+	}
+}

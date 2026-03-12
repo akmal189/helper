@@ -1,0 +1,5 @@
+@import "global:/s3/makeup/sass/mixins/transform.scss";
+@import "global:/s3/makeup/sass/mixins/flex.scss";
+@import "global:/s3/makeup/sass/functions/data-image-svg.scss";
+@import "global:templates/addons/lp_blocks/css/_addons.textblock2_block.scss";
+@include addons-textblock2($titleFSize: 30px);

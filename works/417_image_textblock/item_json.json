@@ -1,0 +1,40 @@
+{
+    "title":{
+        "required": false,
+        "type":"hidden"
+    },
+    "block_title":{
+        "name":"Заголовок блока",
+        "type":"text",
+        "maxlength": 200,
+        "size": 60
+    },
+    "text_block":{
+        "name":"Текстовые блоки",
+        "type":"meta",
+        "value":{
+            "title":{
+                "type":"text",
+                "name":"Заголовок",
+                "size":"60",
+                "maxlength":"250",
+                "required": false
+            },
+            "text":{
+                "type":"textarea",
+                "name":"Текст",
+                "cols":"70",
+                "rows":"6"
+            },
+            "image":{
+                "type":"image2",
+                "name":"Картинка",
+                "cropper":{
+                    "width":"460",
+                    "height":"300"
+                },
+                "note":"Размер картинки 460px * 300px"
+            }
+        }
+    }
+}

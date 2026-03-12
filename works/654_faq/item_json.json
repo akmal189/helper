@@ -1,0 +1,25 @@
+{
+	"title": {
+		"type": "generate",
+		"name": "Заголовок",
+		"size": 80,
+		"maxlength": 250
+	},
+	"list": {
+		"type": "meta",
+		"name": "Блоки",
+		"value": {
+			"title": {
+				"type": "text",
+				"name": "Заголовок",
+				"required": true,
+				"size": 80,
+				"maxlength": 250
+			},
+			"body": {
+				"type": "html",
+				"name": "Текст"
+			}
+		}
+	}
+}

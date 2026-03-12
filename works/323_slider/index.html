@@ -1,0 +1,58 @@
+{include file="db:slider.type.121.tpl" slider=$slider_121 append_class='mine-slider full-width' width=1180 height=540}
+
+{if !$slider_class_prefix}
+	{assign var=slider_class_prefix value="mg-accordion"}
+{/if}
+
+<div class="{$slider_class_prefix}-slider-wrapper js-{$slider_class_prefix}-slider-wrapper {$append_class}" data-height="{$height|default:'0'}" data-preload-height="{$preloadHeight|default:$height|default:'0'}">
+	<div class="{$slider_class_prefix}-slider js-{$slider_class_prefix}-slider">
+		{foreach from=$slider.slides item=e name=slider key=k}
+			<div class="{$slider_class_prefix}-slider-item js-{$slider_class_prefix}-slider-item{if $smarty.foreach.slider.index == 0} active{/if}" >
+	    		{assign var=method value='r'}
+				<img class="{$slider_class_prefix}-slider-item-image" src="{s3_img src=$e.image.filename width=$width height=$height method=$method}" alt="{$e.title}">
+			
+				{if $e.text}
+				<div class="{$slider_class_prefix}-slider-item-desc js-{$slider_class_prefix}-slider-item-desc x-bottom">
+					<span class="btn-up-desc"><svg class="btn-up-desc-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8" height="5" viewBox="0 0 8 5"><defs><path id="61rna" d="M376.7 618l-.7.7 3.95 3.96 3.95-3.95-.7-.71-3.25 3.24z"/></defs><g><g transform="translate(-376 -617)"><use fill="#222" xlink:href="#61rna"/></g></g></svg></span>
+					<div class="wrp-left-desc">
+						{if $e.title}
+							<div class="{$slider_class_prefix}-slider-item-desc-title">
+								{$e.title}
+							</div>
+						{/if}
+						{if $e.text}<div class="{$slider_class_prefix}-slider-item-desc-text">{$e.text|htmlspecialchars_decode}</div>{/if}
+					</div>
+					{if $e.link && $e.link_text}
+						<a href="{$e.link}" class="{$slider_class_prefix}-slider-item-link" target="_blank" title="{$e.title}" alt="{$e.title}" >{$e.link_text|default:"Узнать больше"}</a>
+					{/if}
+				</div>
+				{/if}
+			</div>
+		{/foreach}
+	</div>
+	
+	<div class="{$slider_class_prefix}-slider-cloak js-{$slider_class_prefix}-slider-cloak">
+		<div class="{$slider_class_prefix}-slider-cloak-progress js-{$slider_class_prefix}-slider-cloak-progress"></div>
+		<div class="{$slider_class_prefix}-slider-cloak-text js-{$slider_class_prefix}-slider-cloak-text">{$slider.cloakText|default:$progressText|default:"Загрузка"}</div>
+	</div>
+	
+</div>
+
+{assign var=w value=$slider.slides|@count}
+{literal}
+<style>
+	@media all and (max-width: 768px) and (min-width: 721px) {{/literal}
+		.{$slider_class_prefix} .{$slider_class_prefix}-slider-item {literal}{
+			width: calc(40% / {/literal}{$w-1}{literal});
+		}
+	}
+
+	@media all and (min-width: 769px) {{/literal}
+		.{$slider_class_prefix} .{$slider_class_prefix}-slider-item {literal}{
+			width: calc(45% / {/literal}{$w-1}{literal});
+		}
+	}
+</style>
+{/literal}
+
+<script src="/g/templates/addons/slider/type.121/js/slider.type.121.js"></script>

@@ -1,0 +1,13 @@
+@import "global:/s3/makeup/sass/mixins/transform.scss";
+@import "global:/s3/makeup/sass/mixins/flex.scss";
+@import "global:templates/addons/slider/type.121/css/_slider.type.121.scss"; 
+@include addons-slider-type-121($mg-slick-prefix: 'mg-accordion');
+.mg-accordion-slider-wrapper .mg-accordion-slider-item-link {
+	background: #faa15c;
+	&:hover {
+		box-shadow: 0 0 0 transparent, 0px 5px 20px rgba(250, 161, 92, 0.4);
+	}
+}
+.mg-accordion-slider-wrapper {
+	margin-bottom: 30px;
+}

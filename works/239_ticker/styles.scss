@@ -1,0 +1,62 @@
+.ticker {
+	background: #5A789F;
+	padding: 10px 20px;
+	&__wrapper {
+		max-width: 1430px;
+		width: 100%;
+		margin: 0 auto;
+		border: 2px solid #fff;
+		border-radius: 8px;
+		padding: 5px 8px;
+		position: relative;
+		overflow: hidden;
+		&:before, &:after {
+			position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    width: 28px;
+		    content: '';
+		}
+		&:before {
+			left: 0;
+		    border-left: 8px solid #ffffff;
+		    background-color: rgba(255, 255, 255, 0.5);
+		    background-image: -moz-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0));
+		    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#ffffff), to(rgba(255, 255, 255, 0)));
+		    background-image: -webkit-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0));
+		    background-image: -o-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0));
+		    background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+		    background-repeat: repeat-x;
+		    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+		}
+		&:after {
+		    right: 0;
+		    border-right: 8px solid #ffffff;
+		    background-color: rgba(255, 255, 255, 0.5);
+		    background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff);
+		    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 0)), to(#ffffff));
+		    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff);
+		    background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff);
+		    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+		    background-repeat: repeat-x;
+		    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 0)', endColorstr='#ffffff', GradientType=1);
+		}
+		.wrap {
+			font-size: 18px;
+			line-height: 36px;
+			font-weight: normal;
+		    color: #fff;
+		    width: 9999px;
+		    display: flex;
+		    align-items: center;
+		    white-space: nowrap;
+		    will-change: transform;
+			> div {
+				p {
+					margin: 0;
+				}
+				flex: unset;
+			}
+		}
+	}
+}

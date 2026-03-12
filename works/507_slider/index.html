@@ -1,0 +1,23 @@
+{s3_require file="/g/libs/lightgallery/v1.6.8/lightgallery.min.js"}
+{s3_require file="/g/libs/lightgallery/v1.6.8/lightgallery.min.css"}
+{s3_require file="/g/libs/jquery-slick/1.9.0/slick.min.js"}
+{s3_require file="/g/libs/jquery-slick/1.9.0/slick.css"}
+
+{if $slider_1851.list}
+	<div class="slider-wrap">
+		<div class="slider-wrap-in">
+			<div class="slider-list">
+				{foreach from=$slider_1851.list item=e}
+					<div class="slider-item">
+						<div class="slider-item-image">
+							<a href="{$IMAGES_DIR}{$e.image.filename}">
+								<img src="{s3_img width=1680 height=700 method=c src=$e.image.filename}" alt="{$e.title}" />
+							</a>
+						</div>
+						<div class="slider-item-title">{$e.title}</div>
+					</div>
+				{/foreach}
+			</div>
+		</div>
+	</div>
+{/if}

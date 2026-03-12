@@ -1,0 +1,21 @@
+@import "global:templates/addons/lp_blocks/css/_addons.advantages_ver2_block.scss";
+@include addons-advantages-ver2();
+
+.advantages-block {
+	margin-bottom: 30px;
+	&__inner {
+		
+		.default-advantages-ver2 {
+			padding: 0;
+			background: none;
+		}
+		.default-advantages-ver2--inner ul {
+			padding-left: 0;
+		}
+		.default-advantages-ver2--title {
+			padding: 0;
+			margin-bottom: 30px;
+		}
+	}
+	
+}

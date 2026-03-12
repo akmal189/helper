@@ -1,0 +1,49 @@
+{if !empty($reviews.list)}
+    <section class="reviews block-padding">
+        <div class="reviews__container block-width">
+            <div class="reviews__header">
+                <div class="reviews__title-wrapper">
+                    <div class="reviews__title">{$reviews.title}</div>
+                    {if $reviews.desc}
+                        <div class="reviews__description">{$reviews.desc}</div>
+                    {/if}
+                </div>
+                {if $reviews.btn_text}
+                    <div class="reviews__more">
+                        <a href="{$reviews.link}" class="reviews__more-link">{$reviews.btn_text}</a>
+                    </div>
+                {/if}
+            </div>
+            <div class="reviews__items">
+                {foreach from=$reviews.list item=e}
+                    {if ($e.video_id.filename || $e.rt_video_id) && $e.image.filename}
+                        <div class="reviews__item tns-item">
+                            <div class="reviews-item">
+                                <div class="reviews-item__video-wrapper">
+                                    <div class="reviews-item__video-poster" data-html="<iframe width=&quot;860&quot; height=&quot;515&quot; src=&quot;{if $e.video_id.filename}{$e.video_id.filename}{else}https://rutube.ru/play/embed/{$e.rt_video_id}{/if}&quot; frameBorder=&quot;0&quot; allow=&quot;clipboard-write; autoplay&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>">
+                                        <img src="{s3_img src=$e.image.filename width=600}" alt="" class="reviews-item__video-poster-image loaded tns-complete">
+                                    </div>
+                                </div>
+                                <div class="reviews-item__body">
+                                    <div class="reviews-item__header">
+                                        <div class="reviews-item__title-wrapper">
+                                            <div class="reviews-item__title">{$e.title}</div>
+                                            {if $e.desc}
+                                                <div class="reviews-item__description">{$e.desc}</div>
+                                            {/if}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {/if}
+                {/foreach}
+            </div>
+            <div class="reviews__controls">
+                <button type="button" class="reviews__prev-button"></button>
+                <div class="reviews__nav"></div>
+                <button type="button" class="reviews__next-button"></button>
+            </div>
+        </div>
+    </section>
+{/if}

@@ -1,0 +1,46 @@
+{
+    "speed": {
+        "type": "int",
+        "name": "Скорость анимации",
+        "value": 300,
+        "note": "Значение в мс (1000 мс = 1 сек)",
+        "size": 5,
+        "maxlength": 5,
+        "required": true,
+        "staff_only": true
+    },
+    "slides": {
+        "type": "meta",
+        "name": "Список слайдов",
+        "value": {
+            "title": {
+                "name": "Заголовок слайда",
+                "type": "text",
+                "size": 70,
+                "maxlength": 255
+            },
+            "text": {
+                "name": "Текст",
+                "type": "html"
+            },
+            "link_text": {
+                "name": "Текст кнопки",
+                "type": "text",
+                "size": 40,
+                "maxlength": 255
+            },
+            "link": {
+                "name": "Ссылка кнопки",
+                "type": "text",
+                "size": 70,
+                "maxlength": 255
+            },
+            "image": {
+                "name": "Изображение",
+                "type": "image2",
+                "required": true
+            }
+            
+        }
+    }
+}

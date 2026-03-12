@@ -1,0 +1,43 @@
+{
+	"desc": {
+		"type": "html",
+		"name": "Описание"
+	},
+	"link": {
+		"type": "text",
+		"name": "Ссылка",
+		"size": 80,
+		"maxlength": 250
+	},
+	"btn_text": {
+		"type": "text",
+		"name": "Текст кнопки"
+	},
+	"list": {
+		"type": "meta",
+		"name": "Блоки",
+		"value": {
+			"image": {
+				"type": "image2",
+				"name": "Изображение",
+				"note": "Оптимальный размер 400х600"
+			},
+			"video_id": {
+				"type": "media2",
+				"name": "Локально видео"
+			},
+			"rt_video_id": {
+				"type": "text",
+				"name": "ID видео rutube",
+				"size": 80,
+				"maxlength": 250
+			},
+			"desc": {
+				"type": "text",
+				"name": "Описание",
+				"size": 80,
+				"maxlength": 250
+			}
+		}
+	}
+}
