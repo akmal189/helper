@@ -45,6 +45,10 @@ PAGE_HTML = """
 def index():
     return render_template_string(PAGE_HTML)
 
+@app.route("/ping")
+def ping():
+    return "ok", 200
+
 
 @app.route("/generate", methods=["POST"])
 def generate():
