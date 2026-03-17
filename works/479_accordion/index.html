@@ -2,7 +2,7 @@
 	<div class="accordion-block" style="background: url('{s3_img src=$accordion.image.filename method=$img_method}') bottom left no-repeat #fafafa;">
 		<div class="accordion-block__inner">
 			<div class="accordion-block__title">{$accordion.title}</div>
-			<div class="accordion-block__body" itemscope itemtype="https://schema.org/FAQPage">
+			<div class="accordion-block__body">
 				{if $accordion.image.filename}
 					<div class="accordion-block__left"></div>
 				{/if}
@@ -10,7 +10,7 @@
 					<div class="accordion-block__list">
 						{foreach from=$accordion.list item=e}
 							{if $e.body}
-								<div class="accordion-block__item" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+								<div class="accordion-block__item">
 									<div class="accordion-block__item-title">
 										<div class="tick">
 											<svg xmlns="http://www.w3.org/2000/svg" id="marka.svg" width="138.59" height="139.032" viewBox="0 0 138.59 139.032">
@@ -18,10 +18,10 @@
 												<path id="Shape_14_copy_2" data-name="Shape 14 copy 2" class="cls-2" d="M1207.58,830.382l-63.51,91.92-0.06.053-0.62.99a7.334,7.334,0,0,1-5.52,2.353h-0.11l-2.29-.361-0.31-.161-1.45-.681-0.57-.575-0.27-.147-0.68-.789-0.66-.736-26.98-30.858a7.5,7.5,0,0,1,10.16-11.031l22.43,25.7,57.94-83.871a7.528,7.528,0,0,1,6.25-3.4,7.928,7.928,0,0,1,4.11,1.2A7.558,7.558,0,0,1,1207.58,830.382Z" transform="translate(-1070.19 -818.781)" fill="#ff4238" fill-opacity="1" type="solidColor"/>
 											</svg>
 										</div>
-										<div class="title" itemprop="name">{$e.title}</div>
+										<div class="title">{$e.title}</div>
 									</div>
-									<div class="accordion-block__item-body" itemscope="" itemprop="acceptedAnswer" itemtype="http://schema.org/Answer">
-										<div itemprop="text">
+									<div class="accordion-block__item-body" >
+										<div>
 											{$e.body}
 										</div>
 									</div>
