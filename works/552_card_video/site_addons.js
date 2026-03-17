@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	for (let wrapper of wrappers) {
 		
 		lightGallery(wrapper, {
-			selector: '.card-slider__image a',
+			selector: '.card-slider__image',
             hash: false,
             share: false,
             thumbnail: false,

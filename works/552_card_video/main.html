@@ -10,25 +10,78 @@
 
 {if $product.meta.video && $product.meta.video_poster.filename}
     <div class="card-slider__item has-video">
-        <div class="card-slider__image{if !$product.image_filename} no-image{/if}{if $shop2.my.gr_images_size}{if $site.product_settings.images_size=="2"} gr_image_3x4{elseif $site.product_settings.images_size=="3"} gr_image_2x3{elseif $site.product_settings.images_size=="4"} gr_image_4x3{elseif $site.product_settings.images_size=="5"} gr_image_3x2{else} gr_image_1x1{/if}{/if}">
-            {if $product.image_filename}
-                <a href="{$product.meta.video}">
-                    <img src="{s3_img width=$card_image_width height=$card_image_height src=$product.meta.video_poster.filename method=$shop2.my.s3_img_method}" {if $site.product_settings.images_view} class="gr_image_contain"{/if} alt="{$product.name|htmlspecialchars}" title="{$product.name|htmlspecialchars}" />
-                </a>
-            {/if}
+        <div class="card-slider__image{if !$product.image_filename} no-image{/if}{if $shop2.my.gr_images_size}{if $site.product_settings.images_size=="2"} gr_image_3x4{elseif $site.product_settings.images_size=="3"} gr_image_2x3{elseif $site.product_settings.images_size=="4"} gr_image_4x3{elseif $site.product_settings.images_size=="5"} gr_image_3x2{else} gr_image_1x1{/if}{/if}" data-src="{$product.meta.video}">
+            <a href="javascript:void(0);">
+                <img src="{s3_img width=$card_image_width height=$card_image_height src=$product.meta.video_poster.filename method=$shop2.my.s3_img_method}" {if $site.product_settings.images_view} class="gr_image_contain"{/if} alt="{$product.name|htmlspecialchars}" title="{$product.name|htmlspecialchars}" />
+            </a>
         </div>
     </div>
 {/if}
+{if $product.meta.vk_video && $product.meta.vk_video_poster.filename}
+    <div class="card-slider__item has-video">
+        <div id="vk-video-1" style="display:none;">
+            {assign var=vkVideoId value="_"|explode:$product.meta.vk_video}
+            <iframe src="https://vkvideo.ru/video_ext.php?oid=-{$vkVideoId[0]}&id={$vkVideoId[1]}"
+                    width="560"
+                    height="315"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+        </div>
+        <div class="card-slider__image{if !$product.image_filename} no-image{/if}{if $shop2.my.gr_images_size}{if $site.product_settings.images_size=="2"} gr_image_3x4{elseif $site.product_settings.images_size=="3"} gr_image_2x3{elseif $site.product_settings.images_size=="4"} gr_image_4x3{elseif $site.product_settings.images_size=="5"} gr_image_3x2{else} gr_image_1x1{/if}{/if}" data-html="#vk-video-1">
+            <a href="{$product.meta.vk_video}">
+                <img src="{s3_img width=$card_image_width height=$card_image_height src=$product.meta.vk_video_poster.filename method=$shop2.my.s3_img_method}" {if $site.product_settings.images_view} class="gr_image_contain"{/if} alt="{$product.name|htmlspecialchars}" title="{$product.name|htmlspecialchars}" />
+            </a>
+        </div>
+    </div>
+{/if}
+{if $product.meta.local_video && $product.meta.local_video_poster.filename}
+{assign var=path_to_video value=$product.meta.local_video.filename}
+{assign var=path_to_video2 value=$path_to_video|regex_replace:"/(.+)(v\.oml\.ru)(.+)/":"\$2"}
+{assign var=path_to_video3 value=$path_to_video|regex_replace:"/(https?:)(.+)/":"\$2"}
+
+<div class="card-slider__item has-video">
+    <div style="display:none;" id="video1">
+        <video class="lg-video-object lg-html5" controls="" preload="none" poster="{s3_img width=800 src=$product.meta.local_video_poster.filename method=$shop2.my.s3_img_method}">
+        <source src="https://bellamebel.kz/f/{$path_to_video}" type="video/mp4">
+        Your browser does not support HTML5 video.
+        </video>
+    </div>
+    <div class="card-slider__image" data-html="#video1">
+        <a href="javascript:void(0);">
+            <img src="{s3_img src=$product.meta.local_video_poster.filename width=800}" alt="rt-poster">
+        </a>
+    </div>
+</div>
+{/if}
+
+
 
 
 {if $product.meta.video && $product.meta.video_poster.filename}
     <div class="card-slider__thumb has-video">
         <div class="card-slider__thumb-img{if !$product.image_filename} no-image{/if}{if $shop2.my.gr_images_size}{if $site.product_settings.images_size=="2"} gr_image_3x4{elseif $site.product_settings.images_size=="3"} gr_image_2x3{elseif $site.product_settings.images_size=="4"} gr_image_4x3{elseif $site.product_settings.images_size=="5"} gr_image_3x2{else} gr_image_1x1{/if}{/if}">
-            {if $product.image_filename}
-                <a href="javascript:void(0);">
-                    <img src="{s3_img width=$card_small_image_width height=$card_small_image_height src=$product.meta.video_poster.filename method=$shop2.my.s3_img_method}" {if $site.product_settings.images_view} class="gr_image_contain"{/if}/>
-                </a>
-            {/if}
+            <a href="javascript:void(0);">
+                <img src="{s3_img width=$card_small_image_width height=$card_small_image_height src=$product.meta.video_poster.filename method=$shop2.my.s3_img_method}" {if $site.product_settings.images_view} class="gr_image_contain"{/if}/>
+            </a>
         </div>
     </div>
+{/if}
+{if $product.meta.vk_video && $product.meta.vk_video_poster.filename}
+    <div class="card-slider__thumb has-video">
+        <div class="card-slider__thumb-img{if !$product.image_filename} no-image{/if}{if $shop2.my.gr_images_size}{if $site.product_settings.images_size=="2"} gr_image_3x4{elseif $site.product_settings.images_size=="3"} gr_image_2x3{elseif $site.product_settings.images_size=="4"} gr_image_4x3{elseif $site.product_settings.images_size=="5"} gr_image_3x2{else} gr_image_1x1{/if}{/if}">
+            <a href="javascript:void(0);">
+                <img src="{s3_img width=$card_image_width height=$card_image_height src=$product.meta.vk_video_poster.filename method=$shop2.my.s3_img_method}" {if $site.product_settings.images_view} class="gr_image_contain"{/if} alt="{$product.name|htmlspecialchars}" title="{$product.name|htmlspecialchars}" />
+            </a>
+        </div>
+    </div>
+{/if}
+{if $product.meta.local_video && $product.meta.local_video_poster.filename}
+<div class="card-slider__thumb has-video">
+    <div class="card-slider__thumb-img">
+        <a href="javascript:void(0);">
+            <img src="{s3_img src=$product.meta.local_video_poster.filename width=250}" alt="rt-poster">
+        </a>
+    </div>
+</div>
 {/if}
