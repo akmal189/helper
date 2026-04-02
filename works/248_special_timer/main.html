@@ -1,0 +1,40 @@
+{if $new_form.my_form.dictionaries && !$new_form.hide}
+	<div class="sample-popup" data-time="{$new_form.time|default:"3"}">
+		<div class="sample-popup-in">
+			<div class="sample-popup-inner">
+				<div class="sample-popup-top">
+					<div class="sample-popup-title">{$new_form.title}</div>
+					<div class="sample-popup-image">
+						<img src="{s3_img width=540 height=250 method=c src=$new_form.image.filename}" alt="{$new_form.title}" />
+					</div>
+					{if $new_form.text}
+						<div class="sample-popup-text">
+							{$new_form.text}
+						</div>
+					{/if}
+					<div class="timer-block">
+						<div class="title-text-time">{$new_form.timer.title}</div>
+						{assign var=date_e value=$new_form.timer.data|date_format:"%s"|money_format:0:"":""}
+						{assign var=date_now value=$smarty.now}
+						{assign var=end_date value=$date_e*1000-$date_now*1000}
+			            {math assign="end_date" equation="(x-y)*1000" x=$date_e+1-1 y=$smarty.now}
+			            <ul class="timer" data-end-date="{$end_date}"{if $new_form.hide_timer==true} style="display:none;"{/if}>
+			                <li>%days%<div>%DAYS%</div></li>
+			                <li>%hours%<div>%HOURS%</div></li>
+			                <li>%minuts%<div>%MINUTS%</div></li>
+			                <li>%seconds%<div>%SECONDS%</div></li>
+			            </ul>
+			            <span class="text-after">{$new_form.timer.text_after}</span>
+			        </div>
+				</div>
+				<div class="sample-popup-form">
+					{include file="db:specialNew.tpl" anketa=$new_form.my_form placeholdered_fields=true}
+				</div>
+				<div class="sample-close2"></div>
+			</div>
+	    </div>
+	</div>
+{/if}
+
+<script src="images/js/timer.js"></script>
+<script src="images/js/site_addons.js"></script>
