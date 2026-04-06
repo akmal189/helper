@@ -1,0 +1,124 @@
+{
+    "title":{
+        "type":"hidden",
+        "required":false
+    },
+    "map_block":{
+        "type":"meta",
+        "single":"true",
+        "name":"Карта",
+        "value":{
+            "title":{
+                "type":"hidden",
+                "required":false
+            },
+            "type" : {
+                "type" : "select",
+                "name" : "Тип карты",
+                "options" : {
+                    "yandex" : "Yandex",
+                    "google" : "Google"
+                }
+            },
+            "coords" : {
+                "type" : "coords",
+                "name" : "Координаты центра карты",
+                "required":true
+            },
+            "deep": {
+                "name": "Масштаб по умолчанию",
+                "type": "text",
+                "size": "5",
+                "maxlength": "20",
+                "required": true
+            },
+            "data" : {
+                "type" : "meta",
+                "name" : "Объекты",
+                "value" : {
+                    "title" : {
+                        "type" : "text",
+                        "name" : "Заголовок",
+                        "required":true
+                    },
+                    "coords" : {
+                        "type" : "coords",
+                        "name" : "Координаты",
+                        "required":true
+                    },
+                    "body" : {
+                        "type" : "textarea",
+                        "name" : "Описание"
+                    }
+                }
+            }
+        }
+    },
+    "contacts_title":{
+        "type":"text",
+        "name":"Заголовок блока с контактами",
+        "size": 60,
+        "maxlength": 250
+    },
+    "contacts":{
+        "type":"meta",
+        "single":true,
+        "name":"Контакты",
+        "value":{
+            "title":{
+                "type":"hidden",
+                "required":false
+            },
+            "adress":{
+                "type":"text",
+                "name":"Адрес",
+                "size": 60,
+                "maxlength": 250
+            },
+            "phones":{
+                "type": "meta",
+                "name": "Телефоны",
+                "value": {
+                    "title" : {
+                        "type": "generate",
+                        "value": "{$tel}",
+                        "size": 60,
+                        "maxlength": 250
+                    },
+                    "tel" : {
+                        "type": "text",
+                        "name": "Номер телефона",
+                        "size": 60,
+                        "maxlength": 250,
+                        "required": true
+                    }
+                }
+            },
+            "work":{
+                "type":"text",
+                "name":"Режим работы",
+                "size": 60,
+                "maxlength": 250
+            },
+            "social":{
+                "type":"meta",
+                "name":"Социальные сети",
+                "value":{
+                    "title":{
+                        "type":"text",
+                        "name":"Ссылка на социальную сеть",
+                        "size": 60,
+                        "maxlength": 250,
+                        "required": true
+                    },
+                    "image":{
+                        "type":"image2",
+                        "name":"Иконка",
+                        "note":"Размер иконки 32px * 32px",
+                        "required": true
+                    }
+                }
+            }
+        }
+    }
+}

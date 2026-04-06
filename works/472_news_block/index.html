@@ -1,0 +1,33 @@
+{if $article_post_1851 && $page.main}
+	<div class="news-wrap">
+		<div class="news-wrap-in">
+			<div class="news-name">Новости</div>
+			<div class="news-wrap-list">
+		        {foreach from=$article_post_1851 item=e}
+		            <article class="news-body">
+		            	<div class="news-body-in">
+		            		{dump var=e hidden=1}
+			                <div class="news-date">{$e.publication_date|date_format:"<span>%d</span>%m.%y"}</div>
+			                <div class="news-title"><a href="{get_seo_url uri_prefix=$e.page_url mode="article_post" id=$e.post_id alias=$e.alias}">{$e.title}</a></div>
+				                <div class="news-image">
+				                	<a href="{get_seo_url uri_prefix=$e.page_url mode="article_post" id=$e.post_id alias=$e.alias}">
+			                			{if $e.filename}
+				                			<img src="{s3_img width=- height=220 method=r src=$e.filename}" alt=""  />
+				                		{else}
+				                			<img src="/g/shop2v2/default/images/noimage.png" alt="" />
+			                			{/if}
+				                	</a>
+				                </div>
+			                {if $e.anonce}
+			                	<div class="news-note clear-self">{$e.anonce}</div>
+			                {/if}
+		                </div>
+		            </article>
+		        {/foreach}
+	        </div>
+	        <div class="news-all">
+	        	<a href="/novosti">Все новости</a>
+	        </div>
+		</div>
+	</div>
+{/if}
