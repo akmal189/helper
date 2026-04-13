@@ -1,0 +1,18 @@
+{
+	"text":{
+		"type":"text",
+		"name":"Подзаголовок",
+		"size":50,
+		"maxlength":256
+	},
+	"title_but": {
+		"name": "Название кнопки",
+		"type": "text",
+		"size": "50",
+		"maxlength": "250"
+	},
+	"form" : {
+		"type" : "anketa",
+		"name" : "Форма"
+	}
+}

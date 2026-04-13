@@ -1,0 +1,19 @@
+{if $popup.form}
+    <div class="block_padding" style="max-width: 1600px; width: 100%; margin: 30px auto 20px;">
+        <div class="tm_faq_block">
+            <div class="tm_faq_icon"></div>
+            <div class="tm_faq_title">{$popup.title}</div>
+            <div class="tm_faq_text">{$popup.text}</div>
+            <a href="#" class="tm_faq_btn">{$popup.title_but}</a>
+        </div>
+    </div>
+{/if}
+
+{if $popup.form}
+	<div class="form-wrapper tm_faq_wr">
+		<div class="form-wrapper-inner">
+			<div class="icon-close">&nbsp;</div>
+			{include file="global:shop2.form.minimal.tpl" anketa=$popup.form placeholdered_fields=true}
+		</div>
+	</div>
+{/if}
