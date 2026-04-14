@@ -1,0 +1,31 @@
+<div class="main-news">
+    <div class="main-news__inner">
+    	<div class="main-news__titles">
+    		{foreach from=$news_main_page item=e name=foo}
+    			{if $e.filename}
+	    			<div class="main-news__titles-item{if $smarty.foreach.foo.first} active{/if}">
+	    				<a href="javascript:void(0);">{$e.title}</a>
+	    			</div>
+    			{/if}
+    		{/foreach}
+    	</div>
+    	<div class="main-news__images">
+    		{foreach from=$news_main_page item=e}
+    			{if $e.filename}
+		    		<div class="main-news__images-item">
+		    			<a href="{$e.alias}">
+		    				<img src="{s3_img src=$e.filename width=800}" alt="{$e.title}">
+		    			</a>
+		    			<div class="more-btn">
+		    				<a href="{$e.alias}">Подробнее</a>
+		    			</div>
+		    		</div>
+	    		{/if}
+    		{/foreach}
+    	</div>
+    </div>
+</div>
+
+{s3_require file="/g/libs/jquery-slick/1.8.0/slick.css"}
+{s3_require file="/g/libs/jquery-slick/1.9.0/slick.min.js"}
+{s3_require file="images/js/site_addons.js"}
