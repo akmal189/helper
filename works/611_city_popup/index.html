@@ -1,0 +1,40 @@
+{s3_require file="images/site.addons.js"}
+<link rel="stylesheet" href="images/site.addons.scss.css">
+{if !empty($cities_1851.list)}
+	<div class="site-city site-city-main" data-title="{$cities_1851.list.0.subtitle}" data-link_default="{$cities_1851.list.0.link}">
+		<div class="city-in">
+			<div class="site-address-title title-city"><span>{$cities_1851.list.0.title}</span></div>
+			{assign var=country value='city'|geocode:'ru'}
+			<div class="block-city-first-load" data-city="{'city'|geocode:'ru'}" data-region="{'subdivision'|geocode:'ru'}">
+				<div class="title-city2">Ваш город <span>{if $smarty.cookies.city_title}{$smarty.cookies.city_title}{else}{'city'|geocode:'ru'}{/if}</span> верно?</div>
+				<div class="buttons-select">
+					<span class="city-yes">Да</span>
+					<span class="city-no">Выбрать из списка</span>
+				</div>
+			</div>
+			{if $cities_1851.text}
+			<div class="city-not-found">
+				<div class="city-not-found-in">
+					{$cities_1851.text}
+				</div>
+				<div class="block-pop-close2"></div>
+			</div>
+			{/if}
+		</div>
+	</div>
+	<div class="block-pop-wrap">
+		<div class="block-form-product-pop2">
+			<div class="block-pop-close"></div>
+			<div class="block-pop-in">
+				<div class="title-pop">{$cities_1851.title}</div>
+				<div class="block-city-down">
+					{foreach from=$cities_1851.list item=e}
+						<div>
+							<span class="item-city" data-region="{$e.region}" data-link="{$e.link}">{$e.title}</span>
+						</div>
+					{/foreach}
+				</div>
+			</div>
+		</div>
+	</div>
+{/if}
