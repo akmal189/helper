@@ -1,0 +1,70 @@
+{
+    "title":{
+        "type":"hidden",
+        "required":false
+    },
+    "slider3_title":{
+        "type":"text",
+        "name":"Заголовок блока",
+        "size":"60",
+        "maxlength":250
+    },
+    "slider3":{
+        "type":"meta",
+        "name":"Список картинок",
+        "value":{
+            "title":{
+                "type":"text",
+                "name":"Заголовок",
+                "size": 60,
+                "maxlength": 60,
+                "required":true
+            },
+            "image":{
+                "type":"image2",
+                "name": "Картинка",
+                "cropper":{
+                    "width":"435",
+                    "height":"272"
+                },
+                "required":true,
+                "note":"Размер картинки 435px * 272px"
+            },
+            "text":{
+                "type":"textarea",
+                "name":"Краткое описание",
+                "cols": 60,
+                "rows": 6
+            }
+        }
+    },
+    "settings":{
+        "type":"meta",
+        "name": "Настройки слайдера",
+        "single":true,
+        "value":{
+            "title":{
+                "type":"hidden",
+                "required":false
+            },
+            "autoplay":{
+                "type":"checkbox",
+                "name":"Включить автопролистывание слайдера"
+            },
+            "autoplaySpeed":{
+                "type":"text",
+                "name":"Скорость пролистывание слайдера",
+                "size": 5,
+                "maxlength": 6
+            },
+            "arrows":{
+                "type":"checkbox",
+                "name":"Отключить стрелки пролистывания слайдера"
+            },
+            "dots":{
+                "type":"checkbox",
+                "name":"Включить точки пролистывания"
+            }
+        }
+    }
+}
