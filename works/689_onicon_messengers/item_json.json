@@ -1,0 +1,31 @@
+{
+	"title": {
+		"type": "generate"
+	},
+	
+	"list": {
+		"type": "meta",
+		"name": "Мессенджеры",
+		"value": {
+			"title": {
+				"type": "text",
+				"name": "Заголовок",
+				"size": 50,
+				"maxlength": 200
+			},
+			"image": {
+				"type": "image2",
+				"name": "Изображение",
+				"note": "Рекомендуемый размер 50*50px",
+				"required": true
+			},
+			"link": {
+				"type": "text",
+				"name": "Ссылка",
+				"size": 70,
+				"maxlength": 250,
+				"required": true
+			}
+		}
+	}
+}

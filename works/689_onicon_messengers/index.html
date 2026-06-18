@@ -1,0 +1,64 @@
+{if $fixed_btn.list}
+	<div class="mg-global-messengers">
+		<button class="mg-global-messengers__button"><span></span><span></span><span></span></button>
+		<div class="mg-global-messengers__list">
+			<div class="mg-global-messengers__list-inner">
+				<div class="mg-global-messengers__item">
+					<button class="mg-global-messengers__item-button js-onicon-button">
+						<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#a)"><circle cx="24" cy="24" r="24" fill="url(#b)"/></g><path fill-rule="evenodd" clip-rule="evenodd" d="M24 13c-6.075 0-11 4.925-11 11 0 1.997.534 3.872 1.464 5.487.19.33.222.73.063 1.075l-.94 2.02A1.65 1.65 0 0 0 15.048 35H24c6.075 0 11-4.925 11-11s-4.925-11-11-11Zm-4.4 12.43a1.43 1.43 0 1 0 0-2.858 1.43 1.43 0 0 0 0 2.858Zm8.8 0a1.43 1.43 0 1 0 0-2.858 1.43 1.43 0 0 0 0 2.858Zm-4.4 0a1.43 1.43 0 1 0 0-2.858 1.43 1.43 0 0 0 0 2.858Z" fill="#fff"/><path fill-rule="evenodd" clip-rule="evenodd" d="M24 13c-6.075 0-11 4.925-11 11 0 1.997.534 3.872 1.464 5.487.19.33.222.73.063 1.075l-.94 2.02A1.65 1.65 0 0 0 15.048 35H24c6.075 0 11-4.925 11-11s-4.925-11-11-11Zm-4.4 12.43a1.43 1.43 0 1 0 0-2.858 1.43 1.43 0 0 0 0 2.858Zm8.8 0a1.43 1.43 0 1 0 0-2.858 1.43 1.43 0 0 0 0 2.858Zm-4.4 0a1.43 1.43 0 1 0 0-2.858 1.43 1.43 0 0 0 0 2.858Z" fill="url(#c)"/><defs><linearGradient id="b" x1="24" y1="0" x2="24" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#F7F7F7"/><stop offset="1" stop-color="#E3E3E3"/></linearGradient><linearGradient id="c" x1="24" y1="13" x2="24" y2="35" gradientUnits="userSpaceOnUse"><stop stop-color="#15BB47"/><stop offset="1" stop-color="#1CA345"/></linearGradient><filter id="a" x="0" y="0" width="48" height="48" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.84 0"/><feBlend in2="shape" result="effect1_innerShadow_6264_4297"/></filter></defs></svg>
+					</button>
+					<div class="mg-global-messengers__item-text">Онлайн-чат</div>
+				</div>
+				{foreach from=$fixed_btn.list item=e}
+					<div class="mg-global-messengers__item">
+						<a href="{$e.link}" target="_blank" class="mg-global-messengers__item-button js-onicon-button">
+							<img src="{s3_img width=48 height=48 src=$e.image.filename}" alt="{$e.title}">
+						</a>
+						<div class="mg-global-messengers__item-text">{$e.title}</div>
+					</div>
+				{/foreach}
+			</div>
+		</div>
+	</div>
+{/if}
+
+{if $fixed_btn.list}
+	{literal}
+	<script>
+		$(function() {
+		    let $messageButton = $('.mg-global-messengers__button');
+		    
+		    if ($messageButton.length) {
+		        let $messageList = $('.mg-global-messengers__list');
+		        let activeClass = 'active';
+		        let $oniconButton = document.querySelector('.js-onicon-button');
+		        let $msgrs = $('.mg-global-messengers');
+		        
+		        $messageButton.on('click', function(e) {
+		            e.preventDefault();
+		            $messageList.toggleClass(activeClass);
+		            $messageButton.toggleClass(activeClass);
+		        });
+		        
+		        $oniconButton.addEventListener('click', function(e) {
+					e.preventDefault();
+					document.querySelector('.onicon-button').click();
+					$messageList.classList.remove(activeClass);
+					$messageButton.classList.remove(activeClass);
+				});
+				
+				function checkScrollPosition() {
+					if ($(window).scrollTop() > $(window).height()) {
+						$msgrs.addClass('scroll_down');
+					} else {
+						$msgrs.removeClass('scroll_down');
+					}
+				}
+				
+				checkScrollPosition();
+				$(window).scroll(checkScrollPosition);
+		    }
+		});
+	</script>
+	{/literal}
+{/if}
