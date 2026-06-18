@@ -1,0 +1,6 @@
+{if !empty($fixed_btn.my_form.dictionaries)}
+    <div class="callback_wrapper">
+        <a class="callback_title" href="javascript:void(0);" data-api-url="{$fixed_btn.my_form.postform_api_uri}&param[tpl]=global:shop2.form.minimal.tpl&param[product_link]={$site.domain_mask}{get_seo_url uri_prefix=$shop2.uri mode="product" alias=$product.alias}&param[placeholdered_fields]=1">{$fixed_btn.title}</a>
+        <div class="callback"></div>
+    </div>
+{/if}
