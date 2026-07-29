@@ -1,0 +1,48 @@
+{
+	"hide": {
+		"type": "checkbox",
+		"name": "Не выводить блок"
+	},
+	"time": {
+		"type": "text",
+		"name": "Время всплытия блока",
+		"note": "Указывается в секундах"
+	},
+	"image": {
+		"type": "image2",
+		"name": "Изображение",
+		"note": "Рекомендуемый размер 540*250px"
+	},
+	"text": {
+		"type": "html",
+		"name": "Текст"
+	},
+	"timer" : {
+		"name" : "Таймер акции",
+		"type" : "meta",
+		"single" : true,
+		"value" : {
+			"title" : {
+				"name" : "Название таймера",
+				"type" : "text",
+				"size" : 50,
+				"maxlength" : 250,
+				"required" : true
+			},
+			"data" : {
+				"name" : "Дата окончания акции",
+				"type" : "date"
+			},
+			"text_after" : {
+				"name" : "Текст после окончания акции",
+				"type" : "text",
+				"size" : 50,
+				"maxlength" : 250
+			}	
+		}
+	},
+	"my_form" : {
+		"type" : "anketa",
+		"name": "Форма"
+	}
+}
