@@ -1,0 +1,22 @@
+{capture assign="kinds"}{strip}
+				{foreach from=$product.kinds item=e}
+					{*if $e.kind_id != $product.kind_id*}
+						{include file="db:addon-product-kinds.tpl" e=$e show_params=1 buy=$shop2.my.buy_kind hide_image=0 hide_amount=0 hide_image=1}
+					{*/if*}
+				{/foreach}
+			{/strip}{/capture}
+	
+	        <div
+	            method="post"
+	            action="{$shop2.uri}?mode=cart&amp;action=add"
+	            accept-charset="utf-8"
+	            class="shop2-product">
+	
+	            <input type="hidden" name="kind_id" value="{$product.kind_id}"/>
+	            <input type="hidden" name="product_id" value="{$product.product_id}"/>
+	            <input type="hidden" name="meta" value='{$product.meta|@json_encode|htmlspecialchars|escape}'/>
+
+                <div class="shop2-group-kinds">
+                    {$kinds}
+                </div>
+            </div>
