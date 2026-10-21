@@ -1,0 +1,14 @@
+{if !empty($folder.accordion)}
+    <div class="tm_accordion">
+        {foreach from=$folder.accordion item=e}
+            {if $e.text}
+                <div class="tm_accordion_item">
+                    <div class="tm_accordion_title"><i></i>{$e.title}</div>
+                    <div class="tm_accordion_body">
+                        {$e.text}
+                    </div>
+                </div>
+            {/if}
+        {/foreach}
+    </div>
+{/if}

@@ -1,0 +1,10 @@
+{if $product.meta.till_date}
+    <div class="wr_timer">
+        <div class="title">До окончания акции осталось:</div>
+        <div class="timer-block__date gr-timer">{$product.meta.till_date|date_format:"%d.%m.%Y %H:%M"}</div>
+    </div>
+{/if}
+
+
+
+<!-- Поле вида "Текстовая строка", с примечанием "Пример 28.12.2026 23:59" -->

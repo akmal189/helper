@@ -1,0 +1,130 @@
+.card-page, .product-item__top {
+	.wr_timer {
+		display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+		width: auto;
+		margin-bottom: 30px;
+		position: absolute;
+	    top: -20px;
+	    left: calc(0% - 20px);
+	    color: #fff;
+	    background-color: #ffd043;
+	    border-radius: 10px;
+	    padding: 10px;
+	    @media (max-width: 768px) {
+	    	top: initial;
+	    	padding: 5px;
+	    }
+	    @media (max-width: 767px) {
+	    	top: 0px;
+	    	left: 0;
+	    }
+		.title {
+		    font-size: 12px;
+		    margin-bottom: 5px;
+		    text-align: center;
+		    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+		    color: #000;
+		}
+		.timer-block__date {
+			justify-content: center;
+			background: none;
+			border: none;
+			align-items: baseline;
+			gap: 5px;
+			@media (max-width: 768px) {
+				gap: 2px;
+			}
+			.gr-timer-elem {
+				display: flex;
+			    flex-direction: column;
+			    align-items: center;
+			    justify-content: center;
+				.gr-timer-number {
+					width: auto;
+					height: auto;
+					font-weight: bold;
+					line-height: 1.2;
+					font-size: 16px;
+					background: none;
+					color: #000;
+					box-shadow: none;
+					@media (max-width: 768px) {
+						font-size: 14px;
+						font-weight: 400;
+					}
+				}
+				em {
+					display: block;
+					font-style: normal;
+				    font-size: 11px;
+				    opacity: .5;
+				    color: #000;
+				}
+			}
+		}
+		.gr-timer-delim {
+			font-size: 16px;
+			color: #000;
+			background: none;
+			opacity: 1;
+			width: auto;
+			height: auto;
+			font-size: 12px;
+			margin: 0;
+		}
+	}
+}
+.product-item__top {
+	.wr_timer {
+		top: unset;
+		left: unset;
+		right: 0;
+		bottom: 0;
+		@media (max-width: 768px) and (min-width: 768px) {
+	    }
+	    @media (max-width: 560px) {
+	    	position: relative;
+	    	margin-bottom: 10px;
+	    	.title {
+	    		font-size: 9px;
+	    	}
+	    	.gr-timer-number {
+	    		width: 26px;
+	    		margin: 0 auto;
+	    	}
+	    	.timer-block__date {
+	    		.gr-timer-elem {
+	    			em {
+	    				//display: none;
+	    				font-size: 10px;
+	    			}
+	    		}
+	    	}
+	    }
+	}
+}
+body .main-blocks .main-tabs__products {
+	.product-item__top-left .wr_timer {
+		top: 0px;
+	}
+}
+.card-page .shop2-product-additional__left {
+	.shop2-product-additional__top {
+		display: flex;
+		flex-direction: column;
+	}
+	.wr_timer {
+		align-self: flex-start;
+		position: static;
+	}
+}
+.product_columns_4 .product-list .product-item__top .timer-block__date .gr-timer-elem .gr-timer-number {
+        line-height: 1.2;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}

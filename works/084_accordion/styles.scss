@@ -1,0 +1,122 @@
+:root {
+    --orange-normal: #ff7044;
+    --darck-normal: #464657;
+    --orange-hover: #ff5d2b;
+    --blue-light-hover: #5a5a70;
+}
+
+* {
+    font-family: "Arial", sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.tm_accordion_title {
+    border-radius: 6px;
+    background: var(--darck-normal);
+    padding: 19px 20px 19px 71px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+    margin-bottom: 2px;
+}
+
+.tm_accordion_title i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin: auto;
+    background: #fff;
+}
+
+.tm_accordion_title i:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 2px;
+    height: 14px;
+    margin: auto;
+    border-radius: 2px;
+    transition: all 0.3s;
+    background: var(--darck-normal);
+}
+
+.tm_accordion_title i:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 14px;
+    height: 2px;
+    margin: auto;
+    border-radius: 2px;
+    transition: all 0.3s;
+    background: var(--darck-normal);
+}
+
+@media (max-width: 767px) {
+    .tm_accordion_title {
+        padding: 16px 16px 16px 50px;
+    }
+
+    .tm_accordion_title i {
+        width: 26px;
+        height: 26px;
+        left: 16px;
+    }
+}
+
+.tm_accordion_body {
+    display: none;
+    padding: 30px 28px 30px 28px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 175%;
+    color: #000;
+    border: 2px solid var(--orange-normal);
+    border-radius: 6px;
+}
+
+.tm_accordion_body p {
+    margin-top: 0;
+}
+
+.tm_accordion_body p:last-child {
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .tm_accordion_body {
+        padding: 16px;
+    }
+}
+
+.tm_accordion_item {
+    padding-bottom: 3px;
+}
+
+.tm_accordion_item.active > .tm_accordion_title {
+    background: var(--orange-normal);
+}
+
+.tm_accordion_item.active > .tm_accordion_title i:before {
+    transform: rotate(90deg);
+    background: var(--orange-normal);
+}
+
+.tm_accordion_item.active > .tm_accordion_title i:after {
+    background: var(--orange-normal);
+}

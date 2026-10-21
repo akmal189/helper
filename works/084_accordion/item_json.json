@@ -1,0 +1,12 @@
+{
+    "accordion": {
+        "type": "meta",
+        "name": "FAQ блок",
+        "value": {
+            "text": {
+                "type": "html",
+                "name": "Текст"
+            }
+        }
+    }
+}
