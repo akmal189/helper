@@ -1,0 +1,8 @@
+{
+	"link": {
+		"type": "text",
+		"name": "Ссылка",
+		"size": 70,
+		"maxlength": 250
+	}
+}
